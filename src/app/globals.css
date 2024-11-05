@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Main brand or primary color */
+    --primary-color: #A45286;
+    /* Secondary color */
+    --secondary-color: #FFE3EF;
+    /* Background color */
+    --background-color: #F6F7F2;
+
+    /* Additional shades (optional) */
+
+    /* Lighter shade of primary */
+    --primary-color-light: #BF6D9D;
+    /* Darker shade of primary */
+    --primary-color-dark: #803B61;
+
+    /* Lighter shade of secondary */
+    --secondary-color-light: #FFD7EB;
+    /* Darker shade of secondary */
+    --secondary-color-dark: #F5BCD2;
+
+    /* Default text color */
+    --text-color: #333333;
+    /* Light text color */
+    --text-light-color: #666666;
+    /* Border color for elements */
+    --border-color: #E0E0E0;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Bungee';
+    src: url('/fonts/Bungee/Bungee-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham/gothampro.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Arial';
+    src: url('/fonts/Arial/ARIAL.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Login */
+.clip-login-triangle {
+    clip-path: polygon(28% 0, 100% 0, 100% 100%, 65% 100%);
+}
+
+/* Signup */
+.clip-signup-triangle {
+    clip-path: polygon(0 0%, 52% 0, 20% 100%, 0% 100%);
+}
+
+.nav-searchbar::placeholder {
+    margin-right: 7rem;
+}
+
+/* Your Group Custom Scrollbar  */
+.your-group-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    /* Scrollbar width */
+}
+
+.your-group-scrollbar::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    /* Track color */
+    border-radius: 4px;
+    /* Rounded track */
+}
+
+.your-group-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #A45286;
+    /* Scrollbar color */
+    border-radius: 4px;
+    /* Rounded scrollbar */
+    border: 2px solid #f0f0f0;
+    /* Adds spacing around the thumb */
+}
