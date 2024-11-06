@@ -13,15 +13,15 @@ export default function Hashtag() {
                     </h2>
                 </div>
                 {/* Hashtag Section */}
-                <div className="mb-10 mt-6">
-                    <div className="w-[843px] h-[576px] flex flex-wrap bg-[#fff] rounded-[4px]">
-                        <div className="flex p-5 space-x-2">
-                            <div className="w-[51px] h-[23px] flex justify-center items-center bg-[#A45286] rounded-[4px]">
-                                <span className='font-[Arial] font-[700px] text-white text-[12px] leading-[13.8px]'>All</span>
-                            </div>
-                            <div className="w-[51px] h-[23px] flex justify-center items-center bg-[#A45286] rounded-[4px]">
-                                <span className='font-[Arial] font-[700px] text-white text-[12px] leading-[13.8px]'>Favourite</span>
-                            </div>
+                <div className="mb-10 mt-6 h-[576px] w-[843px] bg-[#fff]">
+                    <div className="w-[843px] flex flex-wrap p-5 items-center mt-4 gap-[0.5rem] rounded-[4px]">
+                        {/* Hashtag */}
+                        <div className="bg-[#A45286] text-white min-w-[51px] h-[23px] flex justify-center rounded-[4px] items-center py-[4px] px-[14px] text-[12px] font-[Gotham] leading-[13.8px]">
+                            <span className='font-[Arial] font-[700px] text-white text-[12px] leading-[13.8px]'>All</span>
+                        </div>
+                        {/* Hashtag */}
+                        <div className="bg-[#A45286] text-white min-w-[51px] h-[23px] flex justify-center rounded-[4px] items-center py-[4px] px-[14px] text-[12px] font-[Gotham] leading-[13.8px]">
+                            <span className='font-[Arial] font-[700px] text-white text-[12px] leading-[13.8px]'>Favourite</span>
                         </div>
                     </div>
                 </div>
