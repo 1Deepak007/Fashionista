@@ -25,7 +25,7 @@ export default function Index() {
                         <Image width={500} height={500} src='/assets/feed/picture.png' className='w-[24px] h-[24px]' alt='image' />
                         {/* Video */}
                         <Image width={500} height={500} src='/assets/feed/video.png' className='w-[24px] h-[24px]' alt='video' />
-                        <div className="flex items-center  justify-center w-[32px] h-[32px] bg-[#bb679c] rounded-lg">
+                        <div className="flex justify-center items-center w-[32px] h-[32px] bg-[#bb679c] rounded-[4px]">
                             <BsFillSendFill className="text-white" />
                         </div>
                     </div>

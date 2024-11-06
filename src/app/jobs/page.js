@@ -8,6 +8,7 @@ import JobSection from '../../components/Jobs/JobSection';
 import MoreJobSection from '../../components/Jobs/MoreJobSection';
 // Right Sections
 import PostJobSection from '../../components/Jobs/PostJobSection';
+import MySearchSection from '../../components/Jobs/MySearchSection';
 
 export default function Jobs() {
     return (
@@ -35,25 +36,10 @@ export default function Jobs() {
                 {/* Post Job */}
                 <PostJobSection />
 
-                {/* My Groups Section */}
-                <div className="bg-white h-[290px] shadow-lg mb-3">
-                    <p className="font-bold px-5 pt-4 pb-2 ">My Services</p>
-                    <hr className="border-t border-gray-300 mt-2 " />
-                    {[1, 2, 3].map((_, index) => (
-                        <div key={index} className="flex w-[230px] bg-[#FFE3EF] h-[54px] mx-auto mt-4 items-center p-3 space-x-3">
-                            <div className="flex-1"> {/* Allow this div to grow and take up available space */}
-                                <p className="font-bold text-sm">UI/UX Designer</p> {/* Bold and smaller text for better structure */}
-                                <span className="text-xs text-gray-600">thurt</span> {/* Smaller and muted text for the subtitle */}
-                            </div>
-                            <div className="flex-shrink-0"> {/* Prevent the icon from shrinking */}
-                                icon {/* Replace this with your actual icon */}
-                            </div>
-                        </div>
+                {/* My Search Section */}
+                <MySearchSection />
 
-                    ))}
-                </div>
-
-                {/* My Groups Section */}
+                {/* Trending Job Section */}
                 <div className="bg-white h-[245px] shadow-lg mb-3">
                     <p className="font-bold px-5 pt-4 pb-2 ">Trending Jobs</p>
                     <hr className="border-t border-gray-300 mt-2 " />

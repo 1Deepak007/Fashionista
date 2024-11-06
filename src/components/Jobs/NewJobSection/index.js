@@ -1,4 +1,5 @@
 "use client"
+
 import React from 'react'
 import Image from 'next/image'
 import { IoSearchOutline } from "react-icons/io5";
@@ -20,7 +21,7 @@ export default function Index() {
                     <div className="flex space-x-4 items-center">
                         {/* Filter */}
                         <Image width={500} height={500} src='/assets/jobs/filter.png' className='w-[24px] h-[24px]' alt='link' />
-                        <div className="flex items-center  justify-center w-[32px] h-[32px] bg-[#bb679c] rounded-lg">
+                        <div className="flex justify-center items-center w-[32px] h-[32px] bg-[#bb679c] rounded-[4px]">
                             <IoSearchOutline className="text-white" />
                         </div>
                     </div>
