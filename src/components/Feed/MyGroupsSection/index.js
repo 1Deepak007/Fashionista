@@ -6,7 +6,7 @@ import React from 'react'
 export default function Index() {
     return (
         <div>
-            <div className="bg-white h-[400px] flex flex-col justify-start items-center mb-3">
+            <div className="bg-white h-[400px] flex flex-col justify-start items-center mb-3 rounded-[4px]">
                 <div className='flex justify-between'>
                     <div className="font-[600] px-8 pt-4 text-[12px] pb-2 uppercase font-[Gotham] text-[#181818] leading-[11.48px]">My Groups</div>
                     <div className="font-[600] px-8 pt-4 text-[12px] pb-2 uppercase font-[Gotham] text-[#A45286] leading-[13.8px]">Edit list</div>

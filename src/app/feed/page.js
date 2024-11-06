@@ -1,14 +1,14 @@
 'use client'
 
 import React from 'react';
-// Left Section
+// Left Sections
 import CreatePostSection from '../../components/Feed/CreatePostSection';
 import SortBySection from '../../components/Feed/SortBySection';
 import PostTextSection from '../../components/Feed/PostTextSection';
 import PostTextPhotoSection from '../../components/Feed/PostTextPhotoSection';
 import PostTextContentsDocumentSection from '../../components/Feed/PostTextContentsDocumentSection';
 import PostTextContentsSection from '../../components/Feed/PostTextContentsSection';
-// Right Section
+// Right Sections
 import ProfileSection from '../../components/Feed/ProfileSection';
 import WriteArticleSection from '../../components/Feed/WriteArticleSection';
 import MyGroupsSection from '../../components/Feed/MyGroupsSection';

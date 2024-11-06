@@ -6,7 +6,7 @@ import React from 'react'
 export default function Index() {
     return (
         <div>
-            <div className="bg-white h-[300px] p-4">
+            <div className="bg-white h-[300px] p-4 rounded-[4px]">
                 <p className="font-[600] text-[12px] uppercase leading-[11.48px] font-[Gotham]">Trending Articles</p>
 
                 {/* Divider */}

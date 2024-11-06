@@ -6,7 +6,7 @@ import React from 'react'
 export default function Index() {
     return (
         <div>
-            <div className="bg-white w-[290px] h-[280px] text-center mb-3">
+            <div className="bg-white w-[290px] h-[280px] text-center mb-3 rounded-[4px]">
                 <Image
                     src="/assets/feed/cover.png"
                     alt="Cover"

@@ -7,7 +7,7 @@ import { FaEllipsisH, FaShareAlt } from 'react-icons/fa'
 export default function index() {
     return (
         <div>
-            <div className="bg-white w-[850px] h-auto my-4">
+            <div className="bg-white w-[850px] h-auto my-4 rounded-[4px]">
                 {/* Header Post */}
                 <div className="flex justify-between items-center px-4 py-2">
                     <p className="text-[10px] font-[Gotham] leading-[15px]">

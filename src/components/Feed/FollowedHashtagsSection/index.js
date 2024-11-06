@@ -5,7 +5,7 @@ import React from 'react'
 export default function Index() {
     return (
         <div>
-            <div className="bg-white h-[265px] p-4 mb-3">
+            <div className="bg-white h-[265px] p-4 mb-3 rounded-[4px]">
                 <p className="font-[600] text-[12px] uppercase leading-[11.48px] font-[Gotham]">Followed hashtags</p>
 
                 {/* Divider */}

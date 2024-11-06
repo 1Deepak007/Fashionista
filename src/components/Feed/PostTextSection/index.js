@@ -19,7 +19,7 @@ export default function Index() {
     const trimmedText = text.substring(0, 340); // Show first  characters
     return (
         <div>
-            <div className="bg-white w-[850px] my-4">
+            <div className="bg-white w-[850px] my-4 rounded-[4px]">
                 {/* Header Post */}
                 <div className="flex justify-between items-center px-4 py-2">
                     <p className="text-[10px] font-[Gotham] leading-[15px]">
