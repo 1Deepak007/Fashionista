@@ -2,8 +2,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link'
-import Profile from '../components/Profile/index'
+import Profile from '../../components/Profile'
 function Page() {
     const [activeSection, setActiveSection] = useState('profile');
     const [activeSectionPost, setActiveSectionPost] = useState('post');
@@ -133,28 +132,28 @@ function Page() {
                                 {/* Dynamic content based on active post section */}
                                 <div className="p-4">
                                     {activeSectionPost === 'post' && (
-                                       <div className="p-2 bg-white shadow-lg rounded-lg">
-                                       <h3 className="text-lg font-semibold mb-2 text-gray-800">
-                                         Aditya Kumar Kanaujiya posted this <span className="text-sm text-gray-500">1 week ago</span>
-                                       </h3>
-                                       <div className="flex space-x-4">
-                                         <Image
-                                           className="w-[99px] h-[63px] object-cover rounded-lg"
-                                           src=""
-                                           alt="image"
-                                         />
-                                         <div>
-                                           <p className="text-gray-600 mb-3">
-                                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam in, iure temporibus impedit delectus sed repellendus...
-                                           </p>
-                                           <div className="flex items-center space-x-2 text-blue-600">
-                                             <span className="text-sm">🔗</span>
-                                             <span className="text-sm cursor-pointer hover:underline">See more</span>
-                                           </div>
-                                         </div>
-                                       </div>
-                                     </div>
-                                     
+                                        <div className="p-2 bg-white shadow-lg rounded-lg">
+                                            <h3 className="text-lg font-semibold mb-2 text-gray-800">
+                                                Aditya Kumar Kanaujiya posted this <span className="text-sm text-gray-500">1 week ago</span>
+                                            </h3>
+                                            <div className="flex space-x-4">
+                                                <Image
+                                                    className="w-[99px] h-[63px] object-cover rounded-lg"
+                                                    src=""
+                                                    alt="image"
+                                                />
+                                                <div>
+                                                    <p className="text-gray-600 mb-3">
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam in, iure temporibus impedit delectus sed repellendus...
+                                                    </p>
+                                                    <div className="flex items-center space-x-2 text-blue-600">
+                                                        <span className="text-sm">🔗</span>
+                                                        <span className="text-sm cursor-pointer hover:underline">See more</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     )}
 
                                     {activeSectionPost === 'comment' && (
