@@ -26,7 +26,7 @@ function Page() {
                     </p>
 
                     <p className='w-[755px] h-auto text-[#8F8F8F] mt-7 text-center'>
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to
                     </p>
                 </div>
 
@@ -95,7 +95,7 @@ function Page() {
                     </p>
 
                     <p className='w-[755px] h-auto text-[#8F8F8F] mt-7 text-center'>
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to
                     </p>
                 </div>
             </div>

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 export default function ChatPage() {
+  // eslint-disable-next-line
   const [members, setMembers] = useState(['Alice', 'Bob', 'Charlie']);
   const [messages, setMessages] = useState([
     { sender: 'Alice', text: 'Hi!' },
@@ -39,11 +40,10 @@ export default function ChatPage() {
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`p-2 rounded-md ${
-                  message.sender === 'You'
+                className={`p-2 rounded-md ${message.sender === 'You'
                     ? 'bg-blue-500 text-white self-end'
                     : 'bg-gray-300 text-black'
-                }`}
+                  }`}
               >
                 <strong>{message.sender}:</strong> {message.text}
               </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 function index() {
@@ -49,7 +50,7 @@ function index() {
 
                             {/* Image and Text Section */}
                             <div className="flex items-center justify-center space-x-4 p-4 border rounded-lg">
-                                <Image src="" alt="Post Image" className="w-16 h-16 object-cover rounded" />
+                                <Image width={100} height={100} src="" alt="Post Image" className="w-16 h-16 object-cover rounded" />
                                 <div className="text-left">
                                     <p className="font-semibold">Befog</p>
                                     <span className="text-gray-500">Description or additional text goes here.</span>

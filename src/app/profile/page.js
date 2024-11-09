@@ -18,7 +18,7 @@ function Page() {
                         {/* First image */}
                         <div className="w-[850px] h-[180px]">
                             <div className="h-[180px] bg-gray-200">
-                                <img src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg" className='w-[850px] h-[180px]' alt="" />
+                                <Image src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg" className='w-[850px] h-[180px]' alt="" />
                             </div>
                         </div>
 
@@ -26,7 +26,7 @@ function Page() {
                         <div className="flex items-start space-x-8 -mt-8"> {/* Added -mt-8 to move up by 2 rem */}
                             {/* Second image */}
                             <div className="h-[170px] w-[170px] bg-gray-200 ml-4 rounded-full z-50">
-                                <img src="https://as2.ftcdn.net/v2/jpg/09/37/12/73/1000_F_937127370_RzigoTq55hhV6TOcnRXbZ2kBjSOgWUMJ.jpg" alt="" className='w-[170px] h-[170px] rounded-full' />
+                                <Image src="https://as2.ftcdn.net/v2/jpg/09/37/12/73/1000_F_937127370_RzigoTq55hhV6TOcnRXbZ2kBjSOgWUMJ.jpg" alt="" className='w-[170px] h-[170px] rounded-full' />
                             </div>
 
                             {/* Text details */}
@@ -36,11 +36,11 @@ function Page() {
 
                                 {/* Buttons */}
                                 <div className="mt-4 space-x-4">
-                                    <button className="w-[170px] h-[32px] bg-gradient-to-b from-[#FFA1AF] to-[#A45286] rounded-md hover:bg-[#A45286]  text-white rounded-[4px]">
+                                    <button className="w-[170px] h-[32px] bg-gradient-to-b from-[#FFA1AF] to-[#A45286] hover:bg-[#A45286]  text-white rounded-[4px]">
                                         Contact Info
                                     </button>
 
-                                    <button className="w-[170px] h-[32px] bg-[#FFFF] text-[#A45286] rounded-md hover:bg-[#A45286]  rounded-[4px] absolute border-[2px] border-[#A45286] rounded-md hover:bg-[#A45286] ">
+                                    <button className="w-[170px] h-[32px] bg-[#FFFF] text-[#A45286] absolute border-[2px] border-[#A45286] rounded-md hover:bg-[#A45286] ">
                                         1,043 connections
                                     </button>
 
@@ -223,7 +223,9 @@ function Page() {
                         <div className="flex justify-between p-4">
                             {/* Image and Text 1 */}
                             <div className="flex flex-col">
-                                <img
+                                <Image
+                                    width={250}
+                                    height={160}
                                     src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                                     alt="1"
                                     className="w-[250px] h-[160px] object-cover rounded-md"
@@ -236,7 +238,9 @@ function Page() {
 
                             {/* Image and Text 2 */}
                             <div className="flex flex-col ">
-                                <img
+                                <Image
+                                    width={250}
+                                    height={160}
                                     src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                                     alt="2"
                                     className="w-[250px] h-[160px] object-cover rounded-md"
@@ -249,7 +253,9 @@ function Page() {
 
                             {/* Image and Text 3 */}
                             <div className="flex flex-col">
-                                <img
+                                <Image
+                                    width={250}
+                                    height={160}
                                     src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                                     alt="3"
                                     className="w-[250px] h-[160px] object-cover rounded-md"
@@ -319,7 +325,9 @@ function Page() {
                                 <div className="flex items-center space-x-4 p-2 rounded-lg shadow-md">
                                     {/* Image Section */}
                                     <div className="w-[100px] h-[100px]">
-                                        <img
+                                        <Image
+                                            width={250}
+                                            height={160}
                                             src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                                             alt="Fashion Designer"
                                             className="w-full h-full object-cover rounded-lg"
@@ -345,7 +353,9 @@ function Page() {
                                 <div className="flex items-center space-x-4 p-2 rounded-lg shadow-md">
                                     {/* Image Section */}
                                     <div className="w-[100px] h-[100px]">
-                                        <img
+                                        <Image
+                                            width={250}
+                                            height={160}
                                             src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                                             alt="Fashion Designer"
                                             className="w-full h-full object-cover rounded-lg"
@@ -378,7 +388,9 @@ function Page() {
                             <div className="flex items-center space-x-4 p-2 rounded-lg shadow-md">
                                 {/* Image Section */}
                                 <div className="w-[100px] h-[100px]">
-                                    <img
+                                    <Image
+                                        width={250}
+                                        height={160}
                                         src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                                         alt="Fashion Designer"
                                         className="w-full h-full object-cover rounded-lg"
@@ -436,40 +448,65 @@ function Page() {
                             <hr className="w-[230px] mx-auto " />
                             <div className="flex flex-col items-start m-4 space-y-3"> {/* Added spacing between items */}
                                 <div className="flex items-center w-[216px] h-[52px]">
-                                    <img src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg" alt=""
-                                        className="w-[52px] h-[52px] rounded-full mr-2" /> {/* Add size to the image and margin */}
+                                    <Image
+                                        width={250}
+                                        height={160}
+                                        src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg"
+                                        alt=""
+                                        className="w-[52px] h-[52px] rounded-full mr-2"
+                                    />
                                     <div className="flex flex-col">
                                         <span className=''>text</span>
                                         <p className="text-gray-700">text</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center w-[216px] h-[52px]">
-                                    <img src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg" alt=""
-                                        className="w-[52px] h-[52px] rounded-full mr-2" /> {/* Add size to the image and margin */}
+                                    <Image
+                                        width={250}
+                                        height={160}
+                                        src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg"
+                                        alt=""
+                                        className="w-[52px] h-[52px] rounded-full mr-2"
+                                    />
                                     <div className="flex flex-col">
                                         <span className=''>text</span>
                                         <p className="text-gray-700">text</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center w-[216px] h-[52px]">
-                                    <img src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg" alt=""
-                                        className="w-[52px] h-[52px] rounded-full mr-2" /> {/* Add size to the image and margin */}
+                                    <Image
+                                        width={250}
+                                        height={160}
+                                        src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg"
+                                        alt=""
+                                        className="w-[52px] h-[52px] rounded-full mr-2"
+                                    />
                                     <div className="flex flex-col">
                                         <span className=''>text</span>
                                         <p className="text-gray-700">text</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center w-[216px] h-[52px]">
-                                    <img src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg" alt=""
-                                        className="w-[52px] h-[52px] rounded-full mr-2" /> {/* Add size to the image and margin */}
+                                    <Image
+                                        width={250}
+                                        height={160}
+                                        src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg"
+                                        alt=""
+                                        className="w-[52px] h-[52px] rounded-full mr-2"
+                                    />
                                     <div className="flex flex-col">
                                         <span className=''>text</span>
                                         <p className="text-gray-700">text</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center w-[216px] h-[52px]">
-                                    <img src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg" alt=""
-                                        className="w-[52px] h-[52px] rounded-full mr-2" /> {/* Add size to the image and margin */}
+                                    <Image
+                                        width={250}
+                                        height={160}
+                                        src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg"
+                                        alt=""
+                                        className="w-[52px] h-[52px] rounded-full mr-2"
+                                    />
                                     <div className="flex flex-col">
                                         <span className=''>text</span>
                                         <p className="text-gray-700">text</p>
@@ -486,25 +523,36 @@ function Page() {
                             <hr className="w-[230px] mx-auto" />
                             <div className="flex flex-col items-start m-4 w-[228px] h-[198px] justify-center text-center space-y-3"> {/* Added spacing between items */}
                                 <div className="flex items-center w-[216px] h-[52px]">
-                                    <img src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg" alt=""
-                                        className="w-[80px] h-[52px] mr-2" /> {/* Add size to the image and margin */}
-                                    <div className="flex flex-col">
-                                        <span className=''>text</span>
-                                        <p className="text-gray-700">text</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center w-[216px] h-[52px]">
-                                    <img src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg"
+                                    <Image
+                                        width={250}
+                                        height={160}
+                                        src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg"
                                         alt=""
-                                        className="w-[80px] h-[52px]  mr-2" /> {/* Add size to the image and margin */}
+                                        className="w-[80px] h-[52px] mr-2" />
                                     <div className="flex flex-col">
                                         <span className=''>text</span>
                                         <p className="text-gray-700">text</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center w-[216px] h-[52px]">
-                                    <img src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg" alt=""
-                                        className="w-[80px] h-[52px] mr-2" /> {/* Add size to the image and margin */}
+                                    <Image
+                                        width={250}
+                                        height={160}
+                                        src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg"
+                                        alt=""
+                                        className="w-[80px] h-[52px] mr-2" />
+                                    <div className="flex flex-col">
+                                        <span className=''>text</span>
+                                        <p className="text-gray-700">text</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center w-[216px] h-[52px]">
+                                    <Image
+                                        width={250}
+                                        height={160}
+                                        src="https://fileinfo.com/img/ss/xl/jpg-large_12492-2.jpg"
+                                        alt=""
+                                        className="w-[80px] h-[52px] mr-2" />
                                     <div className="flex flex-col">
                                         <span className=''>text</span>
                                         <p className="text-gray-700">text</p>

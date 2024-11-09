@@ -50,7 +50,7 @@ const Post = () => {
               <FaEllipsisH className="text-gray-700 hover:text-primary text-[20px]" />
             </div>
             <div className="flex items-center mt-6 space-x-4">
-              <img src="/profile.png" alt="Profile" className="w-10 h-10 rounded-full" />
+              <Image width={250} height={160} src="/profile.png" alt="Profile" className="w-10 h-10 rounded-full" />
               <div>
                 <h1 className="text-xl font-semibold">Adity Kumar</h1>
                 <span>Illustration Designer</span>
@@ -60,7 +60,9 @@ const Post = () => {
             <div className="mt-4 text-gray-600">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga placeat aperiam odio sapiente voluptates est...</p>
               <div className="mt-4">
-                <img
+                <Image
+                  width={250}
+                  height={160}
                   src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                   alt="Post Image"
                   className="object-cover w-full h-60"
@@ -96,7 +98,13 @@ const Post = () => {
             <FaEllipsisH className="text-gray-700 hover:text-primary text-[20px]" />
           </div>
           <div className="flex items-center mt-6 space-x-4">
-            <img src="/profile.png" alt="Profile" className="w-10 h-10 rounded-full" />
+            <Image
+              width={250}
+              height={160}
+              src="/profile.png"
+              className="w-10 h-10 rounded-full"
+              alt="Profile"
+            />
             <div>
               <h1 className="text-xl font-semibold">Adity Kumar</h1>
               <span>Illustration Designer</span>
@@ -132,13 +140,17 @@ const Post = () => {
       <div className="shadow-md mt-5 w-[290px] h-[1400px] ">
         {/* Profile Section */}
         <div className="bg-white w-[290px] h-[280px] text-center p-6 shadow-lg mb-3">
-          <img
+          <Image
+            width={250}
+            height={160}
             src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
             alt="Cover"
             className="w-full h-[12px] object-cover mb-4"
           />
           <div className="relative w-[100px] h-[100px]">
-            <img
+            <Image
+              width={250}
+              height={160}
               src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
               alt="Profile"
               className="w-[100px] h-[100px] rounded-full border-4 border-white -mt-12 mx-auto" // Centering the image horizontally
@@ -165,7 +177,9 @@ const Post = () => {
           <hr className="border-t border-gray-300 mt-2" />
           {[1, 2, 3].map((_, index) => (
             <div key={index} className="flex items-center p-3 space-x-3">
-              <img
+              <Image
+                width={250}
+                height={160}
                 src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                 alt="Group"
                 className="w-12 h-12 rounded-full"
@@ -197,7 +211,9 @@ const Post = () => {
           <hr className="border-t border-gray-300 mt-2" />
           {[1, 2, 3].map((_, index) => (
             <div key={index} className="flex items-center p-3 space-x-3">
-              <img
+              <Image
+                width={250}
+                height={160}
                 src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                 alt="Trending Article"
                 className="w-16 h-12"
