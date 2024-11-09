@@ -69,7 +69,9 @@ export default function Jobs() {
 
                         {[1, 2, 3].map((_, index) => (
                             <div key={index} className="flex items-center space-y-10 space-x-3">
-                                <img
+                                <Image
+                                    width={100}
+                                    height={100}
                                     src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
                                     alt="Trending Article"
                                     className="w-[80px] h-[52px]"
