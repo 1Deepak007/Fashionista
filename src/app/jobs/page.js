@@ -64,10 +64,10 @@ export default function Jobs() {
         </div>
 
         {/* Trending Articles Section */}
-        <div className="bg-white h-[500px] p-4 shadow-lg">
-          <p className="font-bold">Articles for you</p>
+        <div className="bg-white h-[400px] p-4 shadow-lg">
+          <p className="font-bold py-3">Articles for you</p>
           <hr className="border-t border-gray-300 mt-2" />
-          <div className="w-[227px] h-[198px] mt-2 flex-wrap">
+          <div className="w-[227px] h-[155px] -mt-2 flex-wrap">
             {[
               {
                 title: "The guide. Apply for a job",
@@ -94,7 +94,7 @@ export default function Jobs() {
                   className="w-[80px] h-[52px]"
                 />
                 <div className="flex flex-col">
-                  <p className="text-semibold text-[14px]">{article.title}</p>
+                  <p className="font-[600] text-[14px]">{article.title}</p>
                   <span className="text-[10px]">{article.viewers}</span>
                 </div>
               </div>

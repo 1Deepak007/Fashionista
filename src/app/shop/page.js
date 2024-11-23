@@ -4,7 +4,7 @@ import Image from 'next/image';
 function Page() {
     return (
         <div className='h-auto mt-[10px] justify-center'>
-            <div className="w-[1440px] h-[599px] flex flex-col items-center justify-center">
+            <div className="w-full h-[599px] flex flex-col items-center justify-center">
                 <div className="w-[1224px] h-[54px] space-x-7 flex justify-center">
                     <button
                         className="w-[589px] border-gray-300 border-2"
@@ -58,7 +58,7 @@ function Page() {
                 </div>
             </div>
 
-            <div className="w-[1442px] py-10 px-14 h-auto mb-2">
+            <div className="w-full py-10 px-14 h-auto mb-2">
                 <div className="flex justify-between mx-auto mb-2">
                     <p className="font-semibold text-xl">Featured Products</p>
                     <p className="text-right text-gray-500">More Products</p>
@@ -85,18 +85,6 @@ function Page() {
                             </div>
                         </div>
                     ))}
-                </div>
-            </div>
-
-            <div className="w-[1440px] h-[599px] flex flex-col items-center justify-center">
-                <div className=" w-[966px] h-auto flex flex-col items-center">
-                    <p className='w-[966px] h-auto text-[#A45286] text-[30px] text-center'>
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
-                    </p>
-
-                    <p className='w-[755px] h-auto text-[#8F8F8F] mt-7 text-center'>
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to
-                    </p>
                 </div>
             </div>
 

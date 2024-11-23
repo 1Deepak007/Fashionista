@@ -38,7 +38,7 @@ const Footer = () => {
                 <div className="px-[4rem] flex justify-around">
                     <Link href="/" className="flex justify-center items-center">
                         <div className="flex justify-center items-center">
-                            <h1 className="text-[20px] font-[400] text-[#934276] font-[Bungee] leading-[30px] uppercase">Fashionista</h1>
+                            <h1 className="text-[20px] font-[400] text-[#934276] font-[Bungee] leading-[30px] uppercase">Modewelt</h1>
                         </div>
                     </Link>
 

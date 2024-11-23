@@ -102,71 +102,49 @@ const Navbar = () => {
     return (
         <>
             <nav className="bg-white shadow-md w-full relative top-[2px] text-[20px] h-[80px] py-4">
-                <div className="container mx-auto flex justify-between items-center ">
+                <div className="container mx-auto flex justify-between items-center">
                     <div className="flex items-center  space-x-4">
                         <div className="relative w-[130px] ">
                             <Link href='/'>
-                                <h1 className="uppercase text-[20px] font-[400] text-primary font-[Bungee] pl-[0.55rem]">Fashionista</h1>
+                                <h1 className="uppercase text-[20px] font-[400] text-primary font-[Bungee] pl-[0.55rem]">Modewelt</h1>
                             </Link>
                             <div className="absolute border-r-2 h-[90px] border-[#DDDDDD] top-[-2.1rem] left-[10.5rem]"></div>
                         </div>
                         <ul className="relative hidden w-[519px] left-[1.3rem] md:flex space-x-6 justify-around mt-[-7px]">
-                            {/* Scroller */}
-                            <div
-                                className="absolute bottom-0 h-[3px] rounded-t-[50px] bg-gradient-to-r bg-[#A45286] top-[4rem] shadow-lg transition-all duration-300 ease-in-out"
-                                style={scrollerStyle}>
-                            </div>
-
+                            <div className="absolute bottom-0 h-[3px] rounded-t-[50px] bg-gradient-to-r bg-[#A45286] top-[4rem] shadow-lg transition-all duration-300 ease-in-out" style={scrollerStyle}></div>
+                            
                             {/* Navigation Links */}
-                            <li
-                                ref={feedRef}
-                                onClick={() => handleLinkClick('/feed', feedRef)}
-                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
+                            <li ref={feedRef} onClick={() => handleLinkClick('/feed', feedRef)} className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/feed" className="flex flex-col items-center">
                                     <SlFeed className="my-2 w-[24px] h-[24px]" />
                                     Feed
                                 </Link>
                             </li>
-                            <li
-                                ref={networkRef}
-                                onClick={() => handleLinkClick('/network', networkRef)}
-                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
+                            <li ref={networkRef} onClick={() => handleLinkClick('/network', networkRef)} className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/network" className="flex flex-col items-center">
                                     <GoPeople className="my-2 w-[24px] h-[24px]" />
                                     Network
                                 </Link>
                             </li>
-                            <li
-                                ref={jobsRef}
-                                onClick={() => handleLinkClick('/jobs', jobsRef)}
-                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
+                            <li ref={jobsRef} onClick={() => handleLinkClick('/jobs', jobsRef)} className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/jobs" className="flex flex-col items-center">
                                     <FiBriefcase className="my-2 w-[24px] h-[24px]" />
                                     Jobs
                                 </Link>
                             </li>
-                            <li
-                                ref={chatRef}
-                                onClick={() => handleLinkClick('/chat', chatRef)}
-                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
+                            <li ref={chatRef} onClick={() => handleLinkClick('/chat', chatRef)} className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/chat" className="flex flex-col items-center">
                                     <IoChatbubbleEllipsesOutline className="my-2 w-[24px] h-[24px]" />
                                     Chat
                                 </Link>
                             </li>
-                            <li
-                                ref={notificationsRef}
-                                onClick={() => handleLinkClick('/notifications', notificationsRef)}
-                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
+                            <li ref={notificationsRef} onClick={() => handleLinkClick('/notifications', notificationsRef)} className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/notifications" className="flex flex-col items-center">
                                     <IoNotificationsOutline className="my-2 w-[24px] h-[24px]" />
                                     Notices
                                 </Link>
                             </li>
-                            <li
-                                ref={shopRef}
-                                onClick={() => handleLinkClick('/shop', shopRef)}
-                                className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
+                            <li ref={shopRef} onClick={() => handleLinkClick('/shop', shopRef)} className="text-[#181818] hover:text-primary text-[12px] font-[600] font-[Arial] uppercase cursor-pointer flex items-center flex-col">
                                 <Link href="/shop" className="flex flex-col items-center">
                                     <AiOutlineShop className="my-2 w-[24px] h-[24px]" />
                                     Shop
@@ -185,7 +163,7 @@ const Navbar = () => {
                             onFocus={() => setPlaceholder('')}
                             onBlur={() => setPlaceholder('Search')}
                             onClick={toggleSearch}
-                            onChange={(e) => setSearchQuery(e.target.value)} // Update search query
+                            onChange={(e) => setSearchQuery(e.target.value)} 
                         />
                         <SearchModal isSearchOpen={isSearchOpen} closeModal={closeModal} />
                     </div>
