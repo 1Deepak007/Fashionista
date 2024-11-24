@@ -30,7 +30,7 @@ function Page() {
 
             {/* Second image with text */}
             <div className="flex items-start space-x-8 -mt-8">
-              {" "}
+              
               {/* Added -mt-8 to move up by 2 rem */}
               {/* Second image */}
               <div className="h-[170px] w-[170px] bg-gray-200 ml-4 rounded-full z-50">
@@ -173,7 +173,7 @@ function Page() {
                   {activeSectionPost === "post" && (
                     <div className="p-2 bg-white shadow-lg rounded-lg">
                       <h3 className="text-lg font-semibold mb-2 text-gray-800">
-                        Aditya Kumar Kanaujiya posted this{" "}
+                        Aditya Kumar Kanaujiya posted this
                         <span className="text-sm text-gray-500">
                           1 week ago
                         </span>
@@ -247,7 +247,7 @@ function Page() {
                         Aditya Kumar uploaded a document <span>1 week ago</span>
                       </h3>
                       <p>
-                        Download the document:{" "}
+                        Download the document:
                         <a href="" className="text-blue-500">
                           Document.pdf
                         </a>
@@ -335,7 +335,7 @@ function Page() {
             {/* See More Section */}
             <div className="text-left pl-4">
               <span className="text-[#A45286] rounded-md hover:bg-[#A45286]  text-[12px] ">
-                SEE ALL{" "}
+                SEE ALL
                 <span className="text-[#A45286] rounded-md hover:bg-[#A45286]  text-[12px] ">
                   (20)
                 </span>
@@ -530,7 +530,7 @@ function Page() {
               </div>
               <hr className="w-[230px] mx-auto " />
               <div className="flex flex-col items-start m-4 space-y-3">
-                {" "}
+                
                 {/* Added spacing between items */}
                 <div className="flex items-center w-[216px] h-[52px]">
                   <Image
@@ -608,7 +608,7 @@ function Page() {
               </div>
               <hr className="w-[230px] mx-auto" />
               <div className="flex flex-col items-start m-4 w-[228px] h-[198px] justify-center text-center space-y-3">
-                {" "}
+                
                 {/* Added spacing between items */}
                 <div className="flex items-center w-[216px] h-[52px]">
                   <Image

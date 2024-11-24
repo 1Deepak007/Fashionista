@@ -58,7 +58,7 @@ export default function RootLayout({
           <Navbar />
         </Suspense>
         <ToastContainer />
-        <main className="px-4 sm:px-6 h-auto lg:px-8">
+        <main className="px-4 sm:px-6 h-auto lg:px-0">
           {children}
         </main>
         <Suspense fallback={<div>Loading Footer...</div>}>

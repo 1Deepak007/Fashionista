@@ -210,7 +210,7 @@ const Auth = () => {
 
                         {/* Registration link */}
                         <div className="regi-link animation mt-6 text-center text-sm text-gray-600 uppercase" style={{ '--li': 25, '--S': 8 }}>
-                            <p>Already have an account?{" "} <a href="#" className="SignInLink text-primary font-bold hover:underline" onClick={() => setActive(false)}>Login</a></p>
+                            <p>Already have an account? <a href="#" className="SignInLink text-primary font-bold hover:underline" onClick={() => setActive(false)}>Login</a></p>
                         </div>
                     </form>
                 </div>

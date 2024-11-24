@@ -15,7 +15,7 @@ export default function Jobs() {
     <div className="flex justify-center min-h-screen mt-12 mb-10 space-x-14">
       {/* Left Section */}
       <div className="flex flex-col w-[850px]">
-        {" "}
+        
         {/* Set the width here */}
         {/* New Job Section */}
         <NewJobSection />
