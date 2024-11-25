@@ -10,53 +10,63 @@ import {
   Icon,
 } from "@mui/material";
 import { AvatarGroup } from "@mui/material";
-import { FaEllipsisH } from 'react-icons/fa';
+import { FaEllipsisH } from "react-icons/fa";
 
 function Page() {
   return (
-    <div className="my-[120px] ml-[130px] flex">
+    <div className="my-[50px] ml-[130px] flex">
       {/* Left */}
-      <div className="w-[290px] h-[480px]">
-        <div className="w-auto h-[95px] shadow-md mb-6">
-          <p className="px-9 py-2 text-center">Notifications</p>
-          <hr />
-          <p className="pt-2 px-6 text-center font-semibold">
-            Notifications Settings
-          </p>
-        </div>
-        <div className="h-[360px] shadow-lg">
-          <div className="space-x-8 w-[230px] mx-auto">
-            <span className="font-semibold">Your Dashboard</span>
-            <span className="text-right text-[#A45286] font-semibold">
-              Go To stats
-            </span>
-          </div>
-          <hr className="w-[230px] mx-auto mt-4" />
-          <div className="flex flex-col m-4">
-            <div className="flex flex-col w-[83px] h-[71px] mb-6">
-              <span className="text-[#A45286] font-bold text-[45px] leading-[51.75px] text-left">
-                896
-              </span>
-              <span className="text-[16px] text-gray-700">views today</span>
-            </div>
-            <div className="flex flex-col w-[83px] h-[71px] mb-6">
-              <span className="text-[#A45286] font-bold text-[45px] leading-[51.75px] text-left">
-                896
-              </span>
-              <span className="text-[16px] text-gray-700">views today</span>
-            </div>
-            <div className="flex flex-col w-[183px] h-[71px] mb-6">
-              <span className="text-[#A45286] font-bold text-[45px] leading-[51.75px] text-left">
-                896
-              </span>
-              <span className="text-[16px] text-gray-700">
-                search appearances
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <Box className="w-[290px] h-[480px]">
+        
+        <Card className="w-auto h-[95px] shadow-md mb-6">
+          
+          <CardContent>
+            
+            <Typography variant="h6" className="px-9 py-2 text-center">
+              Notifications
+            </Typography>
+            <Divider />
+            <Typography className="pt-2 px-6 text-center font-semibold">
+              Notification Settings
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card className="h-[360px] shadow-lg">
+          
+          <CardContent>
+            
+            <Box className="space-x-8 w-[230px] mx-auto flex justify-between items-center">
+              
+              <Typography className="font-semibold">
+                Your Dashboard
+              </Typography>
+              <Typography className="text-right text-[#A45286] font-semibold">
+                Go To stats
+              </Typography>
+            </Box>
+            <Divider className="w-[230px] mx-auto mt-4" />
+            <Box className="flex flex-col m-4">
+              
+              {[896, 896, 896].map((value, index) => (
+                <Box
+                  key={index}
+                  className={`flex flex-col w-[${
+                    index === 2 ? 183 : 83
+                  }px] h-[71px] mb-6`}
+                >
+                  
+                  <Typography className="text-[#A45286] font-bold text-[45px] leading-[51.75px] text-left">
+                    {value}
+                  </Typography>
+                  <Typography className="text-[16px] text-gray-700">
+                    {index === 2 ? "search appearances" : "views today"}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </CardContent>
+        </Card>
+      </Box>
       {/* Right */}
       <Box className="w-[850px] ml-10 h-[562px] p-4">
         {/* RECENT Section */}
@@ -90,7 +100,9 @@ function Page() {
                     </Typography>
                   </Box>
                 </Box>
-                <Typography variant="body2"> <FaEllipsisH className="text-gray-700 text-[20px] cursor-pointer w-[24px] h-[24px] " /></Typography>
+                <Typography variant="body2">
+                  <FaEllipsisH className="text-gray-700 text-[20px] cursor-pointer w-[24px] h-[24px] " />
+                </Typography>
               </Box>
             </CardContent>
           </Card>
@@ -118,7 +130,10 @@ function Page() {
                     </Typography>
                   </Box>
                 </Box>
-                <Typography variant="body2"> <FaEllipsisH className="text-gray-700 text-[20px] cursor-pointer w-[24px] h-[24px] " /></Typography>
+                <Typography variant="body2">
+                  
+                  <FaEllipsisH className="text-gray-700 text-[20px] cursor-pointer w-[24px] h-[24px] " />
+                </Typography>
               </Box>
             </CardContent>
           </Card>
@@ -146,7 +161,10 @@ function Page() {
                     </Typography>
                   </Box>
                 </Box>
-                <Typography variant="body2"> <FaEllipsisH className="text-gray-700 text-[20px] cursor-pointer w-[24px] h-[24px] " /></Typography>
+                <Typography variant="body2">
+                  
+                  <FaEllipsisH className="text-gray-700 text-[20] cursor-pointer w-[20px] h-[px] " />
+                </Typography>
               </Box>
             </CardContent>
           </Card>
@@ -183,7 +201,10 @@ function Page() {
                     </Typography>
                   </Box>
                 </Box>
-                <Typography variant="body2"> <FaEllipsisH className="text-gray-700 text-[20px] cursor-pointer w-[24px] h-[24px] " /></Typography>
+                <Typography variant="body2">
+                  
+                  <FaEllipsisH className="text-gray-700 text-[20px] cursor-pointer w-[24px] h-[24px] " />
+                </Typography>
               </Box>
             </CardContent>
           </Card>
@@ -211,7 +232,10 @@ function Page() {
                     </Typography>
                   </Box>
                 </Box>
-                <Typography variant="body2"> <FaEllipsisH className="text-gray-700 text-[20px] cursor-pointer w-[24px] h-[24px] " /></Typography>
+                <Typography variant="body2">
+                  
+                  <FaEllipsisH className="text-gray-700 text-[20px] cursor-pointer w-[24px] h-[24px] " />
+                </Typography>
               </Box>
             </CardContent>
           </Card>
