@@ -354,6 +354,142 @@ function Page() {
           </div>
         </div>
       </div>
+      <div className="bg-gray-100 py-10">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-[#9e4f81] text-xl md:text-2xl font-bold">
+              Latest Ongoings
+            </h2>
+            <button className="bg-[#9e4f81] text-white font-bold py-2 px-4 rounded-md text-sm">
+              READ ALL
+            </button>
+          </div>
+
+          <p className="text-gray-600 text-sm md:text-base mb-8">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humour, or randomised words which don't.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {Array(3)
+              .fill(0)
+              .map((_, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-md p-4">
+                  <div className="bg-gray-300 h-40 rounded-lg flex items-center justify-center mb-4">
+                    <span className="text-gray-500 text-sm">
+                      Image Placeholder
+                    </span>
+                  </div>
+                  <h3 className="text-gray-900 text-lg font-bold">
+                    NAME OF THE BRAND
+                  </h3>
+                  <div className="flex items-center text-gray-600 text-sm my-2">
+                    <span className="rounded-full bg-gray-400 w-8 h-8 mr-2"></span>
+                    <span>16 JAN</span>
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting
+                  </p>
+                </div>
+              ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="min-h-screen flex flex-col justify-between">
+        <div className="min-h-screen bg-gray-100 py-10 px-10">
+          <div className="container mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Left Side */}
+              <div>
+                <h2 className="text-[#9e4f81] text-xl md:text-2xl font-bold">
+                  Frequently Asked Question
+                </h2>
+                <p className="text-gray-600 text-sm md:text-base mt-4 mb-6 mr-10">
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don't.
+                </p>
+                <button className="bg-[#9e4f81] text-white font-bold py-2 px-4 rounded-md text-sm">
+                  SIGN OUT
+                </button>
+              </div>
+
+              {/* Right Side */}
+              <div className="space-y-4">
+                {Array(4)
+                  .fill(0)
+                  .map((_, index) => (
+                    <div
+                      key={index}
+                      className="border border-[#9e4f81] rounded-lg p-4 flex items-start gap-4"
+                    >
+                      <div className="h-4 w-4 rounded-full bg-[#9e4f81] mt-1"></div>
+                      <p className="text-gray-600 text-sm md:text-base">
+                        There are many variations of passages of Lorem Ipsum
+                        available, but the majority have suffered alteration in
+                        some form, by injected humour, or randomised words which
+                        don't.
+                      </p>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer Section */}
+        <div className="bg-gradient-to-r from-[#9e4f81] to-[#572b47] py-16 px-4">
+          <div className="container mx-auto text-center">
+            {/* Title */}
+            <h1 className="text-white text-3xl font-bold mb-4">FASHIONISTA</h1>
+            {/* Subtitle */}
+            <p className="text-white text-sm md:text-base mb-6">
+              There are many variations of passages of Lorem Ipsum available,
+              but the majority
+            </p>
+            {/* Search Bar */}
+            <div className="mt-12 w-full flex justify-center">
+              {/* Wrapper for input and icon */}
+              <div className="relative w-[501px]">
+                {/* Input Field */}
+                <input
+                  type="text"
+                  placeholder="Search"
+                  className="w-full h-[44px] border-2 border-gray-300 rounded-full px-4 pr-12 focus:outline-none focus:border-[#D36BAD] transition-colors"
+                />
+                {/* Search Icon inside the input */}
+                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center justify-center h-8 w-8 rounded-full bg-[#FFC8EB] text-gray-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M11 3a8 8 0 100 16 8 8 0 000-16zM21 21l-4.35-4.35"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="border border-white">
+          {/* Content for this section */}
+        </div>
+
+        {/* Copyright Section */}
+        <div className="bg-gradient-to-r from-[#9e4f81] to-[#572b47] py-4 text-center text-gray-100 text-sm">
+          copyright @
+        </div>
+      </div>
     </div>
   );
 }
