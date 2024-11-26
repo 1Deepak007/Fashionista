@@ -1,0 +1,28 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"] // previewFeatures enables the full-text search feature and full-text search is used to search for text within the database
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String  @id @default(cuid()) // @id marks a field as the primary key
+  username     String  @unique
+  displayName  String
+  email        String? @unique
+  phone        String
+  passwordHash String
+  googleId     String? @unique
+  avatarUrl    String?
+  bio          String?
+  isVerified   Boolean @default(false)
+  isAdmin      Boolean @default(false)
+  isBanned     Boolean @default(false)
+
+  createdAt DateTime @default(now()) // @default sets a default value for a field
+
+  @@map("users") // @@map allows you to set the name of the table in the database
+}
