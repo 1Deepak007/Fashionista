@@ -13,27 +13,27 @@ export async function login(
 ): Promise<{ error: string }> {
     try {
         // Parse the login values
-        const { username, password } = loginSchema.parse(credentials)
+        const { email, password } = loginSchema.parse(credentials)
 
         // Find the user by username
-        const existingUser = await prisma.user.findFirst({ // findFirst means find the first user that matches the query
-            where: { // where the username is equal to the username
-                username: {
-                    equals: username, // the username
+        const existingEmail = await prisma.user.findFirst({ // findFirst means find the first user that matches the query
+            where: { // where the email is equal to the email
+                email: {
+                    equals: email, // the email
                     mode: "insensitive" // case insensitive
                 }
             }
         })
 
         // If the user does not exist or the user does not have a password hash
-        if (!existingUser || !existingUser.passwordHash) {
+        if (!existingEmail || !existingEmail.passwordHash) {
             return { 
                 error: "Invalid username or password"
             }
         }
 
         // Verify the password
-        const validPassword = await verify(existingUser.passwordHash, password, {
+        const validPassword = await verify(existingEmail.passwordHash, password, {
             memoryCost: 19456, // 128MB
             timeCost: 2, // 2 iterations
             outputLen: 32, // 32 bytes
@@ -48,7 +48,7 @@ export async function login(
         }
 
         // Create a new session
-        const session = await lucia.createSession(existingUser.id, {});
+        const session = await lucia.createSession(existingEmail.id, {});
         // Create a new session cookie
         const sessionCookie = lucia.createSessionCookie(session.id);
         (await cookies()).set( // set the session cookie

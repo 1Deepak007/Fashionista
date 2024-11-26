@@ -1,114 +1,89 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import React, { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import axios from 'axios';
-import '../css/Auth.css';
+import '../../css/auth.css';
 import { toast } from 'react-toastify';
 import Link from 'next/link';
+import { useForm } from 'react-hook-form';
+import { signin } from './loginActions';
+import { signUp } from './signupActions';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { loginSchema, signupSchema } from '@/lib/validation';
+
 
 const Auth = () => {
     const [active, setActive] = useState(false);
+    const router = useRouter();
+    const [pending, startTransition] = useTransition();
+    const [error, setError] = useState(undefined)
 
-    const router = useRouter()
+    // Login Form
+    const {
+        register: loginRegister,
+        handleSubmit: handleLoginSubmit,
+        formState: { isSubmitting: isLoginSubmitting },
+    } = useForm({
+        resolver: zodResolver(loginSchema),
+        defaultValues: {
+            email: "",
+            password: "",
+        },
+    });
 
-    // Login -->
-
-    const [loginuser, setLoginUser] = useState({
-        email: '',
-        password: '',
-    })
-
-    const [buttonDisabledLogin, setButtonDisabledLogin] = useState(false)
-    const [loginLoading, setLoginLoading] = useState(false)
-
-    const onLogin = async (e) => {
-        e.preventDefault(); // Prevent page reload
-        setLoginLoading(true);
-        setButtonDisabledLogin(true);
-
+    const handleLogin = async (data) => {
         try {
-            const res = await axios.post('/api/users/login', loginuser);
-            console.log("Login Success", res.data);
-            setLoginLoading(false);
-            router.push('/welcome');
-            toast.success("Login Successfully");
-        } catch (error) {
-            console.log("Login Failed", error.message);
-            toast.error("Login Failed");
-            setLoginLoading(false);
-            setButtonDisabledLogin(false);
+            setError(undefined);
+            startTransition(async () => {
+                const { error } = await signin(data);
+                if (error) setError(error);
+                else {
+                    toast.success("Login Successful");
+                    router.push("/dashboard");
+                }
+            });
+        } catch (err) {
+            setError(err.response?.data?.message || "Login Failed");
         }
     };
 
-    useEffect(() => {
-        if (loginuser.email.length > 0 && loginuser.password.length > 0) {
-            setButtonDisabledLogin(false)
-        } else {
-            setButtonDisabledLogin(true)
-        }
-    }, [loginuser])
+    // Signup Form
+    const {
+        register: signupRegister,
+        handleSubmit: handleSignupSubmit,
+        formState: { isSubmitting: isSignupSubmitting },
+    } = useForm({
+        resolver: zodResolver(signupSchema),
+        defaultValues: {
+            username: "",
+            email: "",
+            phone: "",
+            password: "",
+            confirmPassword: "",
+        },
+    });
 
-    // ...................................................................................................................................................................................................
-
-    // Signup -->
-
-    const [signupuser, setSignupUser] = useState({
-        username: '',
-        email: '',
-        phone: '',
-        password: '',
-        confirmpassword: ''
-    })
-
-    const [buttonDisabledSignup, setButtonDisabledSignup] = useState(false)
-    const [signupLoading, setSignupLoading] = useState(false)
-
-    const onSignup = async (e) => {
-        e.preventDefault();
-        setSignupLoading(true);
-        setButtonDisabledSignup(true);
-
-        // Check if password and confirm password match
-        if (signupuser.password !== signupuser.confirmpassword) {
-            toast.error("Passwords do not match");
-            setSignupLoading(false);
-            setButtonDisabledSignup(false);
-            return;
-        }
-
-        console.log("signupuser", signupuser)
-
+    const handleSignup = async (data) => {
         try {
-            console.log("signupuser", signupuser)
-            const res = await axios.post('/api/users/signup', signupuser);
-            console.log("Signup Success", res.data);
-            setSignupLoading(false);
-            router.push('/auth');
-            toast.success("Signup Successfully");
-
-            // Send verification mail alert
-            setTimeout(() => {
-                toast.info("Please Check you mail for verification")
-            }, 5000);
-        } catch (error) {
-            console.log("Signup Failed", error.message);
-            toast.error(error.message);
-            setSignupLoading(false);
-            setButtonDisabledSignup(false);
+            setError(undefined);
+            startTransition(async () => {
+                const { error } = await signUp(data);
+                if (error) setError(error);
+                else {
+                    toast.success("Signup Successful");
+                    setTimeout(() => {
+                        toast.info("Please check your email for verification");
+                    }, 5000);
+                }
+            });
+        } catch (err) {
+            setError(err.response?.data?.message || "Signup Failed");
         }
     };
-
-    useEffect(() => {
-        if (signupuser.username.length > 0 && signupuser.email.length > 0 && signupuser.phone.length > 0 && signupuser.password.length > 0 && signupuser.confirmpassword.length > 0) {
-            setButtonDisabledSignup(false)
-        } else {
-            setButtonDisabledSignup(true)
-        }
-    }, [signupuser])
 
     return (
         <div className="flex justify-center items-center min-h-[90vh] relative">
+            {error && <p className="text-center text-red-500">{error}</p>}
             <div className={`auth-container relative z-10 h-[524px] w-[957px] border-primary border-2 flex bg-background shadow-lg rounded-2xl max-w-4xl ${active ? 'active' : ''}`}>
                 <div className="curved-shape1"></div>
                 <div className="curved-shape2"></div>
@@ -120,14 +95,22 @@ const Auth = () => {
                         {/* Login heading underline */}
                         <div className="animation h-[0.4rem] w-[6rem] top-[3.7rem] md:top-[3.5rem] rounded-[10px] left-[6.15rem] md:left-[8.3rem] bg-primary absolute" style={{ '--D': 1, '--S': 22 }}></div>
                     </div>
-                    <form>
+                    <form onSubmit={handleLoginSubmit(handleLogin)}>
                         <div className="input-box animation" style={{ '--D': 2, '--S': 23 }}>
-                            <input id="login_email" type="email" value={loginuser.email} onChange={(e) => setLoginUser({ ...loginuser, email: e.target.value })} required />
+                            <input
+                                type="email"
+                                {...loginRegister("email")}
+                                required
+                            />
                             <label htmlFor="login_username">Email</label>
                             <i className='bx bxs-user'></i>
                         </div>
                         <div className="input-box animation" style={{ '--D': 3, '--S': 24 }}>
-                            <input id="login_password" type="password" value={loginuser.password} onChange={(e) => setLoginUser({ ...loginuser, password: e.target.value })} autoComplete='true' required />
+                            <input
+                                type="password"
+                                {...loginRegister("password")}
+                                required
+                            />
                             <label htmlFor="login_password">Password</label>
                             <i className='bx bxs-lock-alt'></i>
                         </div>
@@ -140,12 +123,11 @@ const Auth = () => {
 
                         <div className="input-box animation" style={{ '--D': 5, '--S': 26 }}>
                             <button
-                                onClick={onLogin}
                                 type="submit"
-                                disabled={buttonDisabledLogin || loginLoading}
-                                className={`uppercase w-full ${buttonDisabledLogin ? 'bg-primarybtn hover:bg-primary cursor-not-allowed' : 'bg-primarybtn hover:bg-primary'} text-white py-3 px-4 rounded-full transition duration-300`}
+                                disabled={isLoginSubmitting}
+                                className={`uppercase w-full ${pending ? 'bg-primarybtn hover:bg-primary cursor-not-allowed' : 'bg-primarybtn hover:bg-primary'} text-white py-3 px-4 rounded-full transition duration-300`}
                             >
-                                {signupLoading ? 'LOGIN...' : 'LOGIN'}
+                                {isLoginSubmitting ? "Logging in..." : "Login"}
                             </button>
                         </div>
 
@@ -170,41 +152,60 @@ const Auth = () => {
                         {/* Signup heading underline */}
                         <div className="animation h-[0.4rem] w-[6rem] top-[3.5rem] rounded-[10px] left-[7.25rem] bg-primary absolute" style={{ '--li': 18, '--S': 1 }}></div>
                     </div>
-                    <form>
+                    <form onSubmit={handleSignupSubmit(handleSignup)}>
                         <div className="input-box animation" style={{ '--li': 19, '--S': 2 }}>
-                            <input id="register_username" type="text" value={signupuser.username} onChange={(e) => setSignupUser({ ...signupuser, username: e.target.value })} autoComplete='true' required />
+                            <input
+                                type="text"
+                                {...signupRegister("username")}
+                                required
+                            />
                             <label htmlFor="register_username">Username</label>
                             <i className='bx bxs-user-rectangle' ></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 20, '--S': 3 }}>
-                            <input id="register_email" type="email" value={signupuser.email} onChange={(e) => setSignupUser({ ...signupuser, email: e.target.value })} autoComplete='true' required />
+                            <input
+                                type="email"
+                                {...signupRegister("email")}
+                                required
+                            />
                             <label htmlFor="register_email">Email</label>
                             <i className='bx bxs-envelope'></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 21, '--S': 4 }}>
-                            <input id="register_phone" type="text" value={signupuser.phone} onChange={(e) => setSignupUser({ ...signupuser, phone: e.target.value })} autoComplete='true' required />
+                            <input
+                                type="text"
+                                {...signupRegister("phone")}
+                                required
+                            />
                             <label htmlFor="register_phone">Phone</label>
                             <i className='bx bxs-phone' ></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 22, '--S': 5 }}>
-                            <input id="register_password" type="password" value={signupuser.password} onChange={(e) => setSignupUser({ ...signupuser, password: e.target.value })} autoComplete='true' required />
+                            <input
+                                type="password"
+                                {...signupRegister("password")}
+                                required
+                            />
                             <label htmlFor="register_password">Password</label>
                             <i className='bx bxs-lock-alt'></i>
                         </div>
                         <div className="input-box animation" style={{ '--li': 23, '--S': 6 }}>
-                            <input id="register_confirm_password" type="password" value={signupuser.confirmpassword} onChange={(e) => setSignupUser({ ...signupuser, confirmpassword: e.target.value })} autoComplete='true' required />
+                            <input
+                                type="password"
+                                {...signupRegister("confirmPassword")}
+                                required
+                            />
                             <label htmlFor="register_confirm_password">Confirm Password</label>
                             <i className='bx bxs-lock'></i>
                         </div>
 
                         <div className="input-box animation" style={{ '--li': 24, '--S': 7 }}>
                             <button
-                                onClick={onSignup}
                                 type="submit"
-                                disabled={buttonDisabledSignup || signupLoading}
-                                className={`uppercase w-full ${buttonDisabledSignup ? 'bg-primarybtn hover:bg-primary cursor-not-allowed' : 'bg-primarybtn hover:bg-primary'} text-white py-3 px-4 rounded-full transition duration-300`}
+                                disabled={isSignupSubmitting}
+                                className={`uppercase w-full ${pending ? 'bg-primarybtn hover:bg-primary cursor-not-allowed' : 'bg-primarybtn hover:bg-primary'} text-white py-3 px-4 rounded-full transition duration-300`}
                             >
-                                {signupLoading ? 'SUBMITTING...' : 'SUBMIT'}
+                                {isSignupSubmitting ? "Signing up..." : "Sign Up"}
                             </button>
                         </div>
 

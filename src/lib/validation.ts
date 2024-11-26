@@ -10,7 +10,7 @@ export const signupSchema = z.object({
     /^[a-zA-Z0-9_-]+$/,
     "Only letters, numbers, underscores, and hyphens are allowed",
   ),
-  password: requiredString.min(8, "Password must be at least 8 characters"),
+  password: requiredString.min(4, "Password must be at least 4 characters"),
 });
 
 // SignUpValues is the type of values that signupSchema accepts
@@ -18,7 +18,7 @@ export type SignUpValues = z.infer<typeof signupSchema>;
 
 // loginSchema is a schema for login values
 export const loginSchema = z.object({
-  username: requiredString,
+  email: requiredString,
   password: requiredString,
 });
 
