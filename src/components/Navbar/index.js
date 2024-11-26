@@ -84,7 +84,6 @@ const Navbar = () => {
     const closeModal = () => {
         setIsModalOpen(false);
         setIsSearchOpen(false);
-        setIsPostShare(false);
     };
 
     // Debounce search input
