@@ -365,7 +365,7 @@ function Page() {
             </button>
           </div>
 
-          <p className="text-gray-600 text-sm md:text-base mb-8">
+          <p className="text-gray-600 text-sm md:text-base max-w-[685px] mb-8">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have suffered alteration in some form, by injected
             humour, or randomised words which don't.
@@ -375,22 +375,22 @@ function Page() {
             {Array(3)
               .fill(0)
               .map((_, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md p-4">
-                  <div className="bg-gray-300 h-40 rounded-lg flex items-center justify-center mb-4">
+                <div key={index} className="rounded-lg">
+                  <div className="bg-gray-300 flex items-center justify-center mb-4 w-full aspect-[16/9] md:max-w-[413px] rounded-lg">
                     <span className="text-gray-500 text-sm">
                       Image Placeholder
                     </span>
                   </div>
-                  <h3 className="text-gray-900 text-lg font-bold">
+                  <h3 className="text-gray-900 text-lg font-bold text-center md:text-left">
                     NAME OF THE BRAND
                   </h3>
-                  <div className="flex items-center text-gray-600 text-sm my-2">
+                  <div className="flex items-center justify-center md:justify-start text-gray-600 text-sm my-2">
                     <span className="rounded-full bg-gray-400 w-8 h-8 mr-2"></span>
                     <span>16 JAN</span>
                   </div>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-600 text-sm text-center md:text-left">
                     Lorem Ipsum is simply dummy text of the printing and
-                    typesetting
+                    typesetting.
                   </p>
                 </div>
               ))}
@@ -427,7 +427,7 @@ function Page() {
                       className="border border-[#9e4f81] rounded-lg p-4 flex items-start gap-4"
                     >
                       <div className="h-4 w-4 rounded-full bg-[#9e4f81] mt-1"></div>
-                      <p className="text-gray-600 text-sm md:text-base">
+                      <p className="text-gray-600 text-sm md:text-base w-full mx-auto">
                         There are many variations of passages of Lorem Ipsum
                         available, but the majority have suffered alteration in
                         some form, by injected humour, or randomised words which
