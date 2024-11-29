@@ -18,7 +18,7 @@ function Profile() {
                     </p>
 
                     {/* See More Section */}
-                    <span className="text-blue-500 cursor-pointer">See more</span>
+                    <span className="text-[#a35285] font-bold cursor-pointer">See more</span>
                 </div>
             </div>
         </div>
