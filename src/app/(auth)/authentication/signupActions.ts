@@ -15,7 +15,10 @@ export async function signUp(
 ): Promise<{ error: string }> {
   try {
     // Parse the sign up values
+    console.log("Signup Server Action")
     const { username, email, password } = signupSchema.parse(credentials);
+    console.log("username", username)
+    console.log("email", email)
 
     // Hash the password
     const passwordHash = await hash(password, {

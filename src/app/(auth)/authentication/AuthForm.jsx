@@ -2,11 +2,11 @@
 
 import React, { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
-import '../../css/auth.css';
+import "@/app/css/Auth.css";
 import { toast } from 'react-toastify';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
-import { signin } from './loginActions';
+import { login } from './loginActions';
 import { signUp } from './signupActions';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { loginSchema, signupSchema } from '@/lib/validation';
@@ -35,7 +35,7 @@ const Auth = () => {
         try {
             setError(undefined);
             startTransition(async () => {
-                const { error } = await signin(data);
+                const { error } = await login(data);
                 if (error) setError(error);
                 else {
                     toast.success("Login Successful");
