@@ -163,7 +163,7 @@ function Page() {
                 </Box>
                 <Typography variant="body2">
                   
-                  <FaEllipsisH className="text-gray-700 text-[20] cursor-pointer w-[20px] h-[px] " />
+                  <FaEllipsisH className="text-gray-700 text-[20] cursor-pointer w-[24px] h-[24px] " />
                 </Typography>
               </Box>
             </CardContent>
