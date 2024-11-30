@@ -17,6 +17,49 @@ function Page() {
   const [activeSection, setActiveSection] = useState("profile");
   const [activeSectionPost, setActiveSectionPost] = useState("post");
 
+  const [activeTab, setActiveTab] = useState("events");
+
+  const handleTabSwitch = (tab) => {
+    setActiveTab(tab);
+  };
+  const events = [
+    {
+      id: 1,
+      title: "React Workshop for Beginners",
+      date: "Mon, Dec 5, 6:00 PM",
+      type: "online",
+      organizer: "Aditya Kumar Kanaujiy",
+      description:
+        "Learn the basics of React.js and build your first web application.",
+      applicants: 12524,
+    },
+    {
+      id: 2,
+      title: "Advanced CSS Techniques",
+      date: "Wed, Dec 7, 4:00 PM",
+      type: "in-person",
+      organizer: "Jane Doe",
+      description:
+        "Explore advanced CSS features, including Flexbox, Grid, and animations.",
+      applicants: 5420,
+    },
+  ];
+
+  const reminders = [
+    {
+      id: 1,
+      title: "Submit Project Report",
+      dueDate: "Thu, Dec 10, 12:00 PM",
+      details: "Ensure all team members have contributed to the final report.",
+    },
+    {
+      id: 2,
+      title: "Schedule Team Meeting",
+      dueDate: "Fri, Dec 11, 2:00 PM",
+      details: "Discuss the project updates and the next steps.",
+    },
+  ];
+
   return (
     <div className="h-auto w-full p-4">
       {/* Main content area */}
@@ -779,6 +822,131 @@ function Page() {
                       <hr />
                       <div className="text-center mt-4">
                         <button className="w-full text-pink-600 font-medium text-sm px-4 py-2 rounded transition-all duration-300 hover:bg-pink-600 hover:text-white">
+                          SEE ALL POST
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="p-6 bg-[#FFFFFF] w-[850px] h-[616px]">
+                {/* Header */}
+                <h1 className="text-xl font-bold mb-4">Events / Reminders</h1>
+
+                {/* Tabs */}
+                <div className="flex space-x-4 mb-6">
+                  <button
+                    className={`px-4 py-2 text-sm font-medium rounded ${
+                      activeTab === "events"
+                        ? "bg-[#a35285] text-white"
+                        : "bg-white text-[#a35285] border border-[#a35285]"
+                    }`}
+                    onClick={() => handleTabSwitch("events")}
+                  >
+                    EVENTS
+                  </button>
+                  <button
+                    className={`px-4 py-2 text-sm font-medium rounded ${
+                      activeTab === "reminders"
+                        ? "bg-[#a35285] text-white"
+                        : "bg-white text-[#a35285] border border-[#a35285]"
+                    }`}
+                    onClick={() => handleTabSwitch("reminders")}
+                  >
+                    REMINDERS
+                  </button>
+                </div>
+
+                {/* Tab Content */}
+                <div>
+                  {activeTab === "events" && (
+                    <div className="space-y-6">
+                      {events.map((event) => (
+                        <div
+                          key={event.id}
+                          className="flex items-start space-x-4 border-b border-gray-200 pb-4"
+                        >
+                          {/* Thumbnail */}
+                          <div className="w-[250px] h-[143px] bg-gray-200 rounded flex items-center justify-center">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className="h-12 w-12 text-gray-400"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <rect
+                                x="3"
+                                y="3"
+                                width="18"
+                                height="18"
+                                rx="2"
+                                ry="2"
+                              />
+                              <line x1="3" y1="8" x2="21" y2="8" />
+                              <line x1="8" y1="3" x2="8" y2="21" />
+                            </svg>
+                          </div>
+
+                          {/* Content */}
+                          <div className="flex-1">
+                            <h2 className="text-lg font-semibold">
+                              {event.title}
+                            </h2>
+                            <p className="text-sm text-gray-500 mt-1">
+                              {event.date}
+                            </p>
+                            <p className="text-sm text-gray-500 mt-1">
+                              🎥 {event.type} • By {event.organizer}
+                            </p>
+                            <p className="text-sm text-gray-500 mt-2">
+                              {event.description}
+                            </p>
+                            <p className="text-sm text-gray-500 mt-2 flex items-center">
+                              <span className="mr-2">👥</span>
+                              {event.applicants.toLocaleString()} Applicants
+                            </p>
+                          </div>
+
+                          {/* Options Menu */}
+                          <div className="relative">
+                            <button className="text-gray-500 hover:text-gray-700">
+                            <FaEllipsisVertical/>
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                      <div className="text-center mt-2">
+                        <button className="w-full h-full text-pink-600 font-medium text-sm px-4 py-3 rounded transition-all duration-300 hover:bg-pink-600 hover:text-white">
+                          SEE ALL POST
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {activeTab === "reminders" && (
+                    <div className="space-y-6">
+                      {reminders.map((reminder) => (
+                        <div
+                          key={reminder.id}
+                          className="border-b border-gray-200 pb-4"
+                        >
+                          <h2 className="text-lg font-semibold">
+                            {reminder.title}
+                          </h2>
+                          <p className="text-sm text-gray-500 mt-1">
+                            📅 Due: {reminder.dueDate}
+                          </p>
+                          <p className="text-sm text-gray-500 mt-2">
+                            {reminder.details}
+                          </p>
+                        </div>
+                      ))}
+                      <div className="text-center mt-2">
+                        <button className="w-full h-full text-pink-600 font-medium text-sm px-4 py-3 rounded transition-all duration-300 hover:bg-pink-600 hover:text-white">
                           SEE ALL POST
                         </button>
                       </div>
