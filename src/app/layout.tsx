@@ -52,7 +52,8 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[--background-color]`} // Global background color
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[--background-color]`}
+        style={{ overflowX: "hidden" }}  // Global background color
       >
         <NProgressLoader /> {/* Include the NProgressLoader here */}
         <Suspense fallback={<div>Loading...</div>}> {/* Fallback UI while loading */}

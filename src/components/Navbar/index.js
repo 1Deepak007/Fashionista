@@ -107,9 +107,9 @@ const Navbar = () => {
                             <Link href='/'>
                                 <h1 className="uppercase text-[20px] font-[400] text-primary font-[Bungee] pl-[0.55rem]">Modewelt</h1>
                             </Link>
-                            <div className="absolute border-r-2 h-[90px] border-[#DDDDDD] top-[-2.1rem] left-[10.5rem]"></div>
+                            <div className="relative border-r-2 h-[90px] border-[#DDDDDD] top-[-3.1rem] left-[1.5rem]"></div>
                         </div>
-                        <ul className="relative hidden w-[519px] left-[1.3rem] md:flex space-x-6 justify-around mt-[-7px]">
+                        <ul className="relative hidden w-[519px] left-[0.3rem] md:flex space-x-6 justify-around mt-[-42px]">
                             <div className="absolute bottom-0 h-[3px] rounded-t-[50px] bg-gradient-to-r bg-[#A45286] top-[4rem] shadow-lg transition-all duration-300 ease-in-out" style={scrollerStyle}></div>
                             
                             {/* Navigation Links */}
@@ -149,11 +149,11 @@ const Navbar = () => {
                                     Shop
                                 </Link>
                             </li>
-                            <div className="absolute border-r-2 h-[81px] top-[-7px] border-[#DDDDDD] left-[32.5rem]"></div>
+                            <div className="relative border-r-2 h-[81px] top-[-14px] border-[#DDDDDD] left-[-0.5rem]"></div>
                         </ul>
                     </div>
 
-                    <div className="relative ml-[5rem] flex w-[270px]">
+                    <div className="relative ml-0 flex w-[270px] mb-[68px]">
                         <FaSearch className="w-[24px] h-[24px] absolute left-1 top-1/2 transform -translate-y-1/2 text-[#bb679c]" /> {/* Positioned Search Icon */}
                         <input
                             type="text"
@@ -168,8 +168,8 @@ const Navbar = () => {
                     </div>
 
 
-                    <div className="absolute border-r-2 h-[81px] top-[-1px] border-[#DDDDDD] left-[62rem]"></div>
-                    <div className="flex w-[330px] mr-[5rem] ">
+                    <div className="relative border-r-2 h-[81px] top-[-37px] border-[#DDDDDD] left-0"></div>
+                    <div className="flex w-[330px] mr-[5rem] mb-[5rem] ml-[1rem]">
                         <div className="relative flex items-center ">
                             <Link href="/profile" className="flex items-center gap-[0.5rem] space-x-2">
                                 <Image
@@ -192,8 +192,8 @@ const Navbar = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="absolute border-r-2 h-[81px] top-[-1px] border-[#DDDDDD] left-[83rem]"></div>
-                    <div className='relative right-[5rem] bottom-[3px] flex flex-col items-center w-[90px] justify-center' onClick={toggleModal}>
+                    <div className="relative border-r-2 h-[81px] top-[-40px] border-[#DDDDDD] left-[-4rem]"></div>
+                    <div className='relative right-[2rem] bottom-[40px] flex flex-col items-center w-[90px] justify-center' onClick={toggleModal}>
                         <OtherModal isModalOpen={isModalOpen} closeModal={closeModal} />
                         <FaEllipsisH className="text-gray-700 hover:text-primary text-[20px] cursor-pointer w-[24px] h-[24px] " />
                         <button className="text-[#181818] text-[12px] w-[44px] h-[11px] hover:text-primary font-[600]">
