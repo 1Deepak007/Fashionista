@@ -22,14 +22,14 @@ const Post = () => {
               placeholder="What's on your mind?"
               className="flex-grow mt-2 p-2 rounded-md focus:outline-none"
             />
-            <div className="flex space-x-4 mt-2">
-              <div className="flex items-center justify-center rounded-lg">
+            <div className="flex space-x-4 mt-2 cursor-pointer">
+              <div className="flex items-center justify-center rounded-lg cursor-pointer">
                 <GrAttachment className="text-xl h-10" />
               </div>
 
-              <CiImageOn className="text-xl h-10" />
-              <CiVideoOn className="text-xl h-10" />
-              <div className="flex items-center justify-center w-10 h-10 bg-[#E188C1] rounded-lg">
+              <CiImageOn className="text-xl h-10 cursor-pointer" />
+              <CiVideoOn className="text-xl h-10 cursor-pointer" />
+              <div className="flex items-center justify-center w-10 h-10 bg-[#E188C1] rounded-lg cursor-pointer">
                 <BsFillSendFill className="text-white" />
               </div>
             </div>
