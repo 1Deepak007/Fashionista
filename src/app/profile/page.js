@@ -162,13 +162,13 @@ function Page() {
             </div>
           </div>
 
-          <div className="mt-12 w-[850px] h-[64px] shadow-lg grid grid-cols-3 items-center border-b">
+          <div className="flex items-end border-b-[1px] border-[#E7E7E7] w-[850px] mt-2">
             <button
               onClick={() => setActiveSection("profile")}
-              className={`w-full font-[Gotham] font-bold h-full border-r last:border-r-0 ${
+              className={`w-[240px] flex justify-center items-center font-[Arial] text-[12px] font-bold transition-all duration-300 leading-[13.8px] ${
                 activeSection === "profile"
-                  ? "bg-[#A45286] text-white"
-                  : "bg-gray-200"
+                  ? "bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0] text-white rounded-t-[4px] cursor-pointer w-[240px] h-[51px]"
+                  : "bg-white text-black h-[40px] cursor-pointer"
               }`}
             >
               Profile
@@ -176,10 +176,10 @@ function Page() {
 
             <button
               onClick={() => setActiveSection("activities")}
-              className={`w-full font-[Gotham] font-bold h-full border-r last:border-r-0 ${
+              className={`w-[240px] flex justify-center items-center font-[Arial] text-[12px] font-semibold transition-all duration-300 leading-[13.8px]  ${
                 activeSection === "activities"
-                  ? "bg-[#A45286] text-white"
-                  : "bg-gray-200"
+                 ? "h-[50px] bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0] text-white rounded-t-[4px] cursor-pointer"
+                  : "bg-white text-black h-[40px] cursor-pointer"
               }`}
             >
               Activity & Interests
@@ -187,10 +187,10 @@ function Page() {
 
             <button
               onClick={() => setActiveSection("articles")}
-              className={`w-full font-[Gotham] font-bold h-full ${
+              className={`w-[240px] flex justify-center items-center font-[Arial] text-[12px] font-semibold transition-all duration-300 leading-[13.8px]  ${
                 activeSection === "articles"
-                  ? "bg-[#A45286] text-white"
-                  : "bg-gray-200"
+                  ? "h-[50px] bg-gradient-to-r from-[#c166a0] via-[#A45286] to-[#c166a0] text-white rounded-t-[4px] cursor-pointer"
+                  : "bg-white text-black h-[40px] cursor-pointer"
               }`}
             >
               Articles (3)
