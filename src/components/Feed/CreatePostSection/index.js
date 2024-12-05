@@ -5,6 +5,8 @@ import { BsFillSendFill } from "react-icons/bs";
 import { PiLinkSimpleBold } from "react-icons/pi";
 import { AiOutlinePicture } from "react-icons/ai";
 import { PiVideoBold } from "react-icons/pi";
+import { IoClose } from "react-icons/io5";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 export default function Index() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -83,11 +85,11 @@ export default function Index() {
                   <div className="bg-white w-[90%] sm:w-[394px] md:w-[550px] rounded-lg shadow-lg p-6 relative">
                     {/* Close Button */}
                     <button
-                      className="absolute top-4 right-4 text-gray-400 hover:text-gray-800"
+                      className="absolute top-4 right-4 text-gray-400 hover:text-gray-800 w-[24px] h-[24px]"
                       onClick={handleModalToggle}
                       aria-label="Close"
                     >
-                      &times;
+                      <IoClose />
                     </button>
                     <h2 className="text-lg font-semibold text-gray-700 mb-4">
                       Media Upload
@@ -168,7 +170,7 @@ export default function Index() {
                             onClick={() => removeFile(index)}
                             aria-label="Remove file"
                           >
-                            &times;
+                            <IoMdCloseCircleOutline />
                           </button>
                         </div>
                       ))}
