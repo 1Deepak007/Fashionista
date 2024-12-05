@@ -88,8 +88,12 @@
     /* Adds spacing around the thumb */
 }
 
-html, body{
-    margin: 0%;
-    padding: 0%;
-    overflow-x: hidden;
+html, body {
+    margin: 0; /* Use 0 instead of 0% */
+    padding: 0; /* Use 0 instead of 0% */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+* {
+    box-sizing: border-box; /* Add this for consistent box-sizing across elements */
 }

@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Image from "next/image";
 import { FaEllipsisH, FaShareAlt } from "react-icons/fa";
 import Modal from "../Sharepopup/Model";
+import { BiLike, BiSolidLike } from "react-icons/bi";
 
 export default function Index() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -10,6 +11,17 @@ export default function Index() {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  const [likeCount, setLikeCount] = useState(10);
+  const [liked, setLiked] = useState(false);
+  // Function to handle like button click
+  const handleLikeClick = () => {
+    if (liked) { 
+      setLikeCount(likeCount - 1); // Decrement like count if already liked
+    } else {
+      setLikeCount(likeCount + 1); // Increment like count if not liked
+    }
+    setLiked(!liked); // Toggle liked state
+  };
   return (
     <div>
       <div className="bg-white h-[259px] my-4 rounded-[4px]">
@@ -66,17 +78,22 @@ export default function Index() {
             {/* Increased spacing */}
             {/* Likes */}
             <div className="flex items-center space-x-2">
-              {" "}
-              {/* Adjusted icon-text spacing */}
-              <Image
-                height={100}
-                width={100}
-                alt="like"
-                src="/assets/feed/like.png"
-                className="w-[13.12px] h-[13.12px]"
-              />
+              {liked ? (
+                <BiSolidLike
+                  size={20}
+                  className="cursor-pointer text-[#a35285]" // Color when liked
+                  onClick={handleLikeClick} // Increment likes on click
+                />
+              ) : (
+                <BiLike
+                  size={20}
+                  className="cursor-pointer text-[#a35285]" // Color when not liked
+                  onClick={handleLikeClick} // Increment likes on click
+                />
+              )}
+              {/* Like count */}
               <span className="text-[14px] font-semibold font-[Gotham]">
-                10
+                {likeCount}
               </span>
             </div>
             {/* Stats Border */}

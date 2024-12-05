@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { FaEllipsisH, FaShareAlt } from "react-icons/fa";
 import Modal from '../Sharepopup/Model'; // Assuming Modal component is imported
+import { BiLike, BiSolidLike } from "react-icons/bi";
 
 export default function Post() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,6 +13,17 @@ export default function Post() {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  const [likeCount, setLikeCount] = useState(28);
+  const [liked, setLiked] = useState(false);
+  // Function to handle like button click
+  const handleLikeClick = () => {
+    if (liked) { 
+      setLikeCount(likeCount - 1); // Decrement like count if already liked
+    } else {
+      setLikeCount(likeCount + 1); // Increment like count if not liked
+    }
+    setLiked(!liked); // Toggle liked state
+  };
 
   const text = `
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi fuga, enim sunt nobis, iste quidem nam mollitia placeat optio sapiente, quam explicabo distinctio reprehenderit excepturi aliquam! Rem at cum neque.
@@ -20,6 +32,7 @@ export default function Post() {
   `;
 
   const trimmedText = text.substring(0, 340); // Show first 340 characters
+  
 
   return (
     <div className="bg-white w-[850px] my-4 rounded-[4px]">
@@ -74,14 +87,23 @@ export default function Post() {
         <div className="relative flex gap-[4rem]">
           {/* Likes */}
           <div className="flex items-center space-x-2">
-            <Image
-              height={13.12}
-              width={13.12}
-              alt="like"
-              src="/assets/feed/like.png"
-              className="w-[13.12px] h-[13.12px]"
-            />
-            <span className="text-[14px] font-semibold font-[Gotham]">28</span>
+          {liked ? (
+                <BiSolidLike
+                  size={20}
+                  className="cursor-pointer text-[#a35285]" // Color when liked
+                  onClick={handleLikeClick} // Increment likes on click
+                />
+              ) : (
+                <BiLike
+                  size={20}
+                  className="cursor-pointer text-[#a35285]" // Color when not liked
+                  onClick={handleLikeClick} // Increment likes on click
+                />
+              )}
+              {/* Like count */}
+              <span className="text-[14px] font-semibold font-[Gotham]">
+                {likeCount}
+              </span>
           </div>
 
           {/* Divider */}

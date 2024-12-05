@@ -3,12 +3,25 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { FaEllipsisH, FaShareAlt } from 'react-icons/fa'
 import Modal from "../Sharepopup/Model"
+import { BiLike, BiSolidLike } from "react-icons/bi";
 
 const PostCard = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
+  const [likeCount, setLikeCount] = useState(10);
+  const [liked, setLiked] = useState(false);
+  // Function to handle like button click
+  const handleLikeClick = () => {
+    if (liked) { 
+      setLikeCount(likeCount - 1); // Decrement like count if already liked
+    } else {
+      setLikeCount(likeCount + 1); // Increment like count if not liked
+    }
+    setLiked(!liked); // Toggle liked state
+  };
+  
 
   const documentItems = [
     {
@@ -23,11 +36,6 @@ const PostCard = () => {
       documentImage: '/assets/feed/document.png',
       downloadIcon: '/assets/feed/download.png',
     },
-  ]
-
-  const stats = [
-    { icon: '/assets/feed/like.png', count: 28, label: 'Likes' },
-    { icon: '/assets/feed/comment.png', count: 79, label: 'Comments' },
   ]
 
   return (
@@ -94,25 +102,58 @@ const PostCard = () => {
 
       {/* Stats and Share Button */}
       <div className="flex justify-between items-center px-9 mb-4 mt-4">
-        <div className="relative flex gap-[4rem]">
-          {stats.map((stat, index) => (
-            <div key={index} className="flex items-center space-x-2">
-              <Image
-                height={13}
-                width={13}
-                alt={stat.label}
-                src={stat.icon}
-                className="w-[13px] h-[13px]"
-              />
-              <span className="text-sm font-semibold">{stat.count}</span>
+          {/* Stats */}
+          <div className="relative flex gap-[4rem]">
+            {" "}
+            {/* Increased spacing */}
+            {/* Likes */}
+            <div className="flex items-center space-x-2">
+              {liked ? (
+                <BiSolidLike
+                  size={20}
+                  className="cursor-pointer text-[#a35285]" // Color when liked
+                  onClick={handleLikeClick} // Increment likes on click
+                />
+              ) : (
+                <BiLike
+                  size={20}
+                  className="cursor-pointer text-[#a35285]" // Color when not liked
+                  onClick={handleLikeClick} // Increment likes on click
+                />
+              )}
+              {/* Like count */}
+              <span className="text-[14px] font-semibold font-[Gotham]">
+                {likeCount}
+              </span>
             </div>
-          ))}
+            {/* Stats Border */}
+            <div className="absolute w-[1px] left-[4.4rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
+            {/* Comments */}
+            <div className="flex items-center space-x-2">
+              {" "}
+              {/* Adjusted icon-text spacing */}
+              <Image
+                height={100}
+                width={100}
+                alt="like"
+                src="/assets/feed/comment.png"
+                className="w-[13.12px] h-[13.12px]"
+              />
+              <span className="text-[14px] font-semibold font-[Gotham]">0</span>
+            </div>
+            {/* Stats Border */}
+            <div className="absolute w-[1px] left-[11rem] bottom-[-16px] h-[54px] bg-[#F4F4F4]"></div>
+          </div>
+          {/* Share Btn */}
+          <div
+            className="relative flex items-center space-x-2 cursor-pointer"
+            onClick={openModal}
+          >
+            <FaShareAlt className="text-primary text-[20px]" />
+            <span className="text-sm font-semibold">SHARE</span>
+          </div>
         </div>
-        <div className="relative flex items-center space-x-2 cursor-pointer" onClick={openModal}>
-          <FaShareAlt className="text-primary text-[20px]" />
-          <span className="text-sm font-semibold">SHARE</span>
-        </div>
-      </div>
+
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} closeModal={closeModal} />
