@@ -216,7 +216,7 @@ export default function Index() {
                 />
               </div>
             {/* Send Icon */}
-            <div className="flex cursor-pointer justify-center items-center w-[32px] h-[32px] bg-[#bb679c] rounded-[4px] hover:bg-pink-500">
+            <div className="flex cursor-pointer justify-center items-center w-[32px] h-[32px] bg-[#bb679c] rounded-[4px] hover:bg-[#A45286]">
               <BsFillSendFill className="text-white" />
             </div>
           </div>
