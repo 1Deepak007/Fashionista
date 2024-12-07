@@ -1,17 +1,34 @@
-"use client"
-import React from 'react'
+"use client";
+
+import React, { useState, useEffect } from 'react';
 
 export default function Index() {
-    return (
-        <div>
-            <div className="w-[290px] h-[75px] flex justify-center bg-white mb-3 rounded-[4px]">
-                <button
-                    className="flex items-center justify-center w-[230px] my-auto h-[32px] rounded-[4px]"
-                    style={{ background: 'linear-gradient(0deg, #A45286 0%, #DC85BC 100%)' }}
-                >
-                    <span className='font-[Gotham] text-[12px] text-white leading-[11.48px] uppercase'>Post a Job</span>
-                </button>
-            </div>
+    const [isHovered, setIsHovered] = useState(false);
+
+  // Ensuring that hover state is used only on the client side
+  useEffect(() => {
+    // This will run once when the component mounts
+    setIsHovered(false); // Default state when mounted on the client side
+  }, []);
+  return (
+    <div>
+      <div className="bg-white w-[290px] h-[75px] text-center mb-3 rounded-[4px]">
+        <div className="flex justify-center w-[290px] h-[75px] mb-3">
+          <button
+            className="rounded-md px-4 w-[269px] my-auto text-[12px] h-[32px] font-[200] font-[Arial] leading-[13.8px] text-white uppercase
+                 hover:text-[14px] hover: scale-101 hover:bg-pink-500 transition-all duration-300"
+            style={{
+              background: isHovered
+                ? "#a35285" 
+                : "linear-gradient(0deg, #A45286 0%, #DC85BC 100%)", // Default gradient background
+            }}
+            onMouseEnter={() => setIsHovered(true)} // Set hover state to true
+            onMouseLeave={() => setIsHovered(false)} // Set hover state to false
+          >
+            Post a job
+          </button>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

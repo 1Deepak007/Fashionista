@@ -10,6 +10,11 @@ import MoreJobSection from "../../components/Jobs/MoreJobSection";
 import PostJobSection from "../../components/Jobs/PostJobSection";
 import MySearchSection from "../../components/Jobs/MySearchSection";
 
+const jobList = [
+  { title: "Fashion Designer", company: "Company Name" },
+  { title: "Product Designer", company: "Company Name" },
+];
+
 export default function Jobs() {
   return (
     <div className="flex justify-center min-h-screen mt-12 mb-10 space-x-14">
@@ -38,30 +43,34 @@ export default function Jobs() {
 
         {/* Trending Job Section */}
         <div className="bg-white h-[245px] shadow-lg mb-4 rounded-lg p-4">
-          <p className="font-bold px-5 pt-4 pb-2">Tracked Jobs</p>
-          <hr className="border-t border-gray-300 mt-2" />
-          <div className="space-y-4 px-3 py-6">
-            {[
-              { title: "Fashion Designer", company: "company name" },
-              { title: "Product designer", company: "company name" },
-            ].map((job, index) => (
-              <div key={index} className="flex items-center space-x-4">
-                <div className="relative w-14 h-14">
-                  <Image
-                    src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
-                    alt="Job"
-                    layout="fill"
-                    className="rounded-full object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="font-medium text-sm">{job.title}</p>
-                  <p className="text-xs text-gray-500">{job.company}</p>
-                </div>
-              </div>
-            ))}
+      {/* Header Section */}
+      <p className="font-bold px-5 pt-4 pb-2">Tracked Jobs</p>
+      <hr className="border-t border-gray-300 mt-2" />
+
+      {/* Jobs List */}
+      <div className="space-y-4 px-3 py-6 overflow-y-auto">
+        {jobList.map((job, index) => (
+          <div
+            key={index}
+            className="flex items-center space-x-4 border border-[#F4F4F4] rounded-md p-2 transition-shadow duration-300 hover:shadow-md"
+          >
+            {/* Job Image */}
+            <Image
+              src="https://fileinfo.com/img/ss/xl/jpg_44-2.jpg"
+              alt={`${job.title} Thumbnail`}
+              width={32}
+              height={32}
+              className="rounded-full object-cover h-[32px]"
+            />
+            {/* Job Details */}
+            <div>
+              <p className="font-medium text-sm text-gray-800">{job.title}</p>
+              <p className="text-xs text-gray-500">{job.company}</p>
+            </div>
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
 
         {/* Trending Articles Section */}
         <div className="bg-white h-[400px] p-4 shadow-lg">
