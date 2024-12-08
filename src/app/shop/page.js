@@ -303,9 +303,9 @@ function Page() {
         </div>
       </div>
       <div className="h-[666px] w-full bg-gradient-to-r from-[#9e4f81] to-[#572b47] flex items-center justify-center md:h-auto">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="col-span-2 text-center px-4 sm:px-8 md:px-16 lg:px-[30rem] lg:pr-[7rem]">
+            <div className="col-span-2 text-center px-4 sm:px-8 md:px-16 lg:px-[30rem] lg:pr-[7rem] ">
               <p className="text-white text-sm md:text-base">
                 There are many variations of passages of Lorem Ipsum available,
                 but the majority have suffered alteration in some form, by
@@ -317,8 +317,9 @@ function Page() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-            <div className="col-span-1 flex flex-col justify-center items-center md:items-start">
-              <h1 className="text-white text-2xl md:text-4xl font-bold mb-4">
+            <div className="col-span-1 flex flex-col justify-center items-center md:items-start pt-8 pb-56 pl-0 pr-0
+">
+              <h1 className="text-white text-2xl md:text-4xl font-bold mb-4 ">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
               </h1>
               <button className="bg-white text-[#9e4f81] font-bold py-2 px-4 rounded">
@@ -398,8 +399,8 @@ function Page() {
         </div>
       </div>
 
-      <div className="min-h-screen flex flex-col justify-between">
-        <div className="min-h-screen bg-gray-100 py-10 px-10">
+      <div className="min-h-fit flex flex-col justify-between">
+        <div className="min-h-fit bg-gray-100 py-10 px-10">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Left Side */}

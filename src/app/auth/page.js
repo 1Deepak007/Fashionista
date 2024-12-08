@@ -118,9 +118,9 @@ const Auth = () => {
       <div
         className={`auth-container relative z-10 border-primary border-2 flex bg-background rounded-2xl max-w-4xl ${
           active ? "active" : ""
-        } h-auto w-full sm:h-[400px] sm:w-[600px] md:h-[500px] md:w-[750px] lg:h-[524px] lg:w-[957px] shadow-lg`}
+        } h-auto w-full sm:h-[400px] sm:w-[600px] md:h-[500px] md:w-[750px] lg:h-[524px] lg:w-[957px]`}
         style={{
-          boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.2)",
+          boxShadow: "0px 22px 70px 10px rgb(163,82,133)",
         }}
       >
         <div className="curved-shape1"></div>
