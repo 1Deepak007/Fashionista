@@ -16,57 +16,58 @@ function Page() {
   return (
     <div className="my-[50px] ml-[130px] flex">
       {/* Left */}
-      <Box className="w-[290px] h-[480px]">
-        
-        <Card className="w-auto h-[95px] shadow-md mb-6">
-          
-          <CardContent>
-            
-            <Typography variant="h6" className="px-9 py-2 text-center">
+      <div className="w-[290px] h-[480px]">
+  {/* Notifications Section */}
+  <div className="w-auto h-[100px] shadow-md mb-6 bg-white rounded-md">
+          <div className="p-4">
+            <span className="w-[10px] h-[51px] bg-[#A45286]"></span>
+            <h6 className="text-center text-[12px] font-semibold">
               Notifications
-            </Typography>
-            <Divider />
-            <Typography className="pt-2 px-6 text-center font-semibold">
-              Notification Settings
-            </Typography>
-          </CardContent>
-        </Card>
-        <Card className="h-[360px] shadow-lg">
-          
-          <CardContent>
-            
-            <Box className="space-x-8 w-[230px] mx-auto flex justify-between items-center">
-              
-              <Typography className="font-semibold">
-                Your Dashboard
-              </Typography>
-              <Typography className="text-right text-[#A45286] font-semibold">
-                Go To stats
-              </Typography>
-            </Box>
-            <Divider className="w-[230px] mx-auto mt-4" />
-            <Box className="flex flex-col m-4">
-              
-              {[896, 896, 896].map((value, index) => (
-                <Box
-                  key={index}
-                  className={`flex flex-col w-[${
-                    index === 2 ? 183 : 83
-                  }px] h-[71px] mb-6`}
-                >
-                  
-                  <Typography className="text-[#A45286] font-bold text-[45px] leading-[51.75px] text-left">
-                    {value}
-                  </Typography>
-                  <Typography className="text-[16px] text-gray-700">
-                    {index === 2 ? "search appearances" : "views today"}
-                  </Typography>
-                </Box>
-              ))}
-            </Box>
-          </CardContent>
-        </Card>
-      </Box>
+            </h6>
+            <hr className="my-2" />
+            <p className="text-center font-medium">Notification Settings</p>
+          </div>
+        </div>
+  {/* Dashboard Section */}
+  <div className="h-[360px] shadow-lg bg-white rounded-md">
+    <div className="p-4">
+      {/* Header */}
+      <div className="flex justify-between items-center w-[230px] mx-auto">
+        <p className="font-semibold text-[12px]">Your Dashboard</p>
+        <p className="text-[#A45286] text-[12px] font-semibold cursor-pointer">
+          Go To Stats
+        </p>
+      </div>
+      <hr className="w-[230px] mx-auto mt-4" />
+      {/* Stats */}
+      <div className="flex flex-col mt-4 space-y-8 ml-2">
+        {/* Views Today */}
+        <div className="flex flex-col">
+          <p className="text-[#A45286] font-bold text-[52px] leading-[51.75px]">
+            367
+          </p>
+          <p className="text-[14px] text-gray-700">views today</p>
+        </div>
+        {/* Posts Views */}
+        <div className="flex flex-col">
+          <p className="text-[#A45286] font-bold text-[52px] leading-[51.75px]">
+            15
+          </p>
+          <p className="text-[14px] text-gray-700">posts views</p>
+        </div>
+        {/* Search Appearances */}
+        <div className="flex flex-col">
+          <p className="text-[#A45286] font-bold text-[52px] leading-[51.75px]">
+            9
+          </p>
+          <p className="text-[14px] text-gray-700">search appearances</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
       {/* Right */}
       <Box className="w-[850px] ml-10 h-[562px] p-4">
         {/* RECENT Section */}
