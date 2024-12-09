@@ -59,7 +59,7 @@ const MessageBubble = ({ message, isCurrentUser }) => (
 );
 
 export default function ChatPage() {
-  const [members, setMembers] = useState([
+  const [members] = useState([
     {
       name: "Alice",
       message: "Hi! How are you?",

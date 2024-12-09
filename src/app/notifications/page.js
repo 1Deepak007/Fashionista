@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image"; // Importing Next.js Image component
 import {
   Box,
   Typography,
@@ -7,7 +6,6 @@ import {
   Card,
   CardContent,
   Avatar,
-  Icon,
 } from "@mui/material";
 import { AvatarGroup } from "@mui/material";
 import { FaEllipsisH } from "react-icons/fa";

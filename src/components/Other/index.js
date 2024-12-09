@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image"; // Don't forget to import Image from Next.js
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoFilterSharp } from "react-icons/io5";
 

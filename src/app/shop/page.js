@@ -53,10 +53,10 @@ function Page() {
         </div>
 
         <div className="mt-[124px] w-[966px] h-auto flex flex-col items-center">
-          <p className="w-[966px] h-auto text-[#A45286] text-[30px] text-center">
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece
-          </p>
+        <p className="w-[966px] h-auto text-center text-[30px] text-[#A45286] font-[Arial] font-[900] uppercase">
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece
+        </p>
+
 
           <p className="w-[755px] h-auto text-[#8F8F8F] mt-7 text-center">
             There are many variations of passages of Lorem Ipsum available, but
@@ -357,7 +357,7 @@ function Page() {
           <p className="text-gray-600 text-sm md:text-base max-w-[685px] mb-8">
             There are many variations of passages of Lorem Ipsum available, but
             the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't.
+            humour, or randomised words which don&apos;t.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -475,7 +475,7 @@ function Page() {
                         <p className="text-[10px]">2013 — 2017</p>
                         <p className="text-[10px]">
                           Additional English classes and fashion profile
-                          courses​.
+                          courses.
                         </p>
                       </div>
                     </div>
@@ -593,8 +593,8 @@ function Page() {
                               </span>{" "}
                               adipiscing elit. Donec vel egestas dolor, nec
                               dignissim metus. Donec augue elit, rhoncus ac
-                              sodales id, porttitor vitae est. Donec laoreet{" "}
-                              <span className="text-blue-500">#rutrum</span>{" "}
+                              sodales id, porttitor vitae est. Donec laoreet
+                              <span className="text-blue-500">#rutrum</span>
                               libero sed pharetra.
                             </p>
                           </div>
