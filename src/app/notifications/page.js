@@ -20,7 +20,6 @@ function Page() {
   {/* Notifications Section */}
   <div className="w-auto h-[100px] shadow-md mb-6 bg-white rounded-md">
           <div className="p-4">
-            <span className="w-[10px] h-[51px] bg-[#A45286]"></span>
             <h6 className="text-center text-[12px] font-semibold">
               Notifications
             </h6>
