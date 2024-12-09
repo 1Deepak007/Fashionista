@@ -53,7 +53,7 @@ export default function Modal({ isOpen, closeModal }) {
                     as="h3"
                     className="text-lg font-medium leading-6 text-[#A45286]"
                   >
-                    You Share Aditya's Post
+                    You Share Aditya&apos;s Post
                   </Dialog.Title>
                   <button
                     type="button"

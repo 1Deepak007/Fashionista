@@ -218,11 +218,12 @@ function Page() {
           </p>
         </div>
         <div className="flex pb-5">
-          <p className="font text-l sm:text-l flex-initial w-full md:w-[685px]">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't
-          </p>
+        <p className="font text-l sm:text-l flex-initial w-full md:w-[685px]">
+  There are many variations of passages of Lorem Ipsum available, but the
+  majority have suffered alteration in some form, by injected humour, or
+  randomised words which don&apos;t
+</p>
+
         </div>
         {/* Product Cards */}
         <div className="flex flex-wrap justify-center gap-6">
@@ -293,13 +294,13 @@ function Page() {
         <div className="container mx-auto px-4 py-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-2 text-center px-4 sm:px-8 md:px-16 lg:px-[30rem] lg:pr-[7rem] ">
-              <p className="text-white text-sm md:text-base mt-[3rem]">
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even
-                slightly believable. If you are going to use a passage of Lorem
-                Ipsum, you need to.
-              </p>
+            <p className="text-white text-sm md:text-base mt-[3rem]">
+  There are many variations of passages of Lorem Ipsum available, but the
+  majority have suffered alteration in some form, by injected humour, or
+  randomised words which don&apos;t look even slightly believable. If you are
+  going to use a passage of Lorem Ipsum, you need to.
+</p>
+
             </div>
           </div>
 
@@ -321,7 +322,7 @@ function Page() {
               <p className="text-white text-center text-sm md:text-base">
                 There are many variations of passages of Lorem Ipsum available,
                 but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even
+                injected humour, or randomised words which don&apos;t look even
                 slightly believable. If you are going to use a passage of Lorem
                 Ipsum, you need to.
               </p>
@@ -334,7 +335,7 @@ function Page() {
               <p className="text-white text-center text-sm md:text-base">
                 There are many variations of passages of Lorem Ipsum available,
                 but the majority have suffered alteration in some form, by
-                injected humour, or randomised words which don't look even
+                injected humour, or randomised words which don&apos;t look even
                 slightly believable. If you are going to use a passage of Lorem
                 Ipsum, you need to.
               </p>
@@ -398,7 +399,7 @@ function Page() {
                 <p className="text-gray-600 text-sm md:text-base mt-4 mb-6 mr-10">
                   There are many variations of passages of Lorem Ipsum
                   available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomised words which don't.
+                  form, by injected humour, or randomised words which don&apos;t.
                 </p>
                 <button className="bg-[#9e4f81] text-white font-bold py-2 px-4 rounded-md text-sm">
                   SIGN OUT
@@ -419,7 +420,7 @@ function Page() {
                         There are many variations of passages of Lorem Ipsum
                         available, but the majority have suffered alteration in
                         some form, by injected humour, or randomised words which
-                        don't.
+                        don&apos;t.
                       </p>
                     </div>
                   ))}

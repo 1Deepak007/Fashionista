@@ -629,7 +629,7 @@ function Page() {
                             Commented on a post • 3h
                           </span>
                         </h3>
-                        <p className="text-gray-600">Hey! What's Up?</p>
+                        <p className="text-gray-600">Hey! What&apos;s Up?</p>
                       </div>
 
                       {/* Second Comment */}
@@ -640,7 +640,7 @@ function Page() {
                             Commented on a post • 3h
                           </span>
                         </h3>
-                        <p className="text-gray-600">Hey! What's Up?</p>
+                        <p className="text-gray-600">Hey! What&apos;s Up?</p>
                       </div>
 
                       {/* Third Comment */}
@@ -651,7 +651,7 @@ function Page() {
                             Commented on a post • 3h
                           </span>
                         </h3>
-                        <p className="text-gray-600">Hey! What's Up?</p>
+                        <p className="text-gray-600">Hey! What&apos;s Up?</p>
                       </div>
 
                       {/* See All Posts Button */}
