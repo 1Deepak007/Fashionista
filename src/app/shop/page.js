@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { IoSearch } from "react-icons/io5";
 
 function Page() {
   const [isAddedFirstSet, setIsAddedFirstSet] = useState([
@@ -67,31 +68,17 @@ function Page() {
         </div>
 
         {/* Search Box with Icon */}
-        <div className="mt-12 w-[966px] flex justify-center relative">
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-[501px] h-[44px] border-2 border-gray-300 rounded-full p-2 pl-10 pr-10 focus:outline-none focus:border-[#D36BAD] transition-colors"
-          />
-          {/* Search Icon */}
-          <span className="absolute ml-[26rem] top-1/2 transform -translate-y-1/2 text-gray-500">
-            {/* Example SVG Icon */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M11 3a8 8 0 100 16 8 8 0 000-16zM21 21l-4.35-4.35"
-              />
-            </svg>
-          </span>
-        </div>
+        <div className="mt-12 w-full max-w-[966px] flex justify-center relative">
+  <input
+    type="text"
+    placeholder="Search"
+    className="w-full max-w-[501px] h-[44px] border-2 border-gray-300 rounded-full p-2 pl-10 pr-10 focus:outline-none focus:border-[#D36BAD] transition-colors"
+  />
+  {/* Search Icon */}
+  <span className="absolute left-[43.5rem] top-1/2 transform -translate-y-1/2 flex items-center justify-center h-8 w-8 rounded-full bg-[#a65386] text-gray-700">
+    <IoSearch className="h-5 w-5 text-white" />
+  </span>
+</div>
       </div>
 
       <div className="w-full py-10 px-6 sm:px-10 md:px-14 h-auto mb-2">
@@ -306,7 +293,7 @@ function Page() {
         <div className="container mx-auto px-4 py-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="col-span-2 text-center px-4 sm:px-8 md:px-16 lg:px-[30rem] lg:pr-[7rem] ">
-              <p className="text-white text-sm md:text-base">
+              <p className="text-white text-sm md:text-base mt-[3rem]">
                 There are many variations of passages of Lorem Ipsum available,
                 but the majority have suffered alteration in some form, by
                 injected humour, or randomised words which don't look even

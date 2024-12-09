@@ -120,7 +120,7 @@ const Auth = () => {
           active ? "active" : ""
         } h-auto w-full sm:h-[400px] sm:w-[600px] md:h-[500px] md:w-[750px] lg:h-[524px] lg:w-[957px]`}
         style={{
-          boxShadow: "0px 22px 70px 10px rgb(163,82,133)",
+          boxShadow: "0px 0px 30px 5px rgb(163,82,133)",
         }}
       >
         <div className="curved-shape1"></div>
