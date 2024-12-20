@@ -1,7 +1,12 @@
+"use client";
 import React from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import images from "../../../public/Images/Images1.png";
+import { IoClose } from "react-icons/io5";
+import Premium from "../Premiun/page"
 
 function OtherModal({ isModalOpen, closeModal }) {
   const router = useRouter();
@@ -29,39 +34,25 @@ function OtherModal({ isModalOpen, closeModal }) {
         } fixed inset-0 bg-black bg-opacity-50 z-40`}
     >
         {/* Profile Content Container */}
-        <div className="bg-white rounded-lg shadow-lg p-6 w-[342pxpx] max-h-[420px] fixed top-[120px] right-5 z-50">
+        <div className="bg-white rounded-lg shadow-lg p-6 w-[342pxpx] max-h-[440px] fixed top-[120px] right-5 z-50">
             {/* Close Button */}
             <button
                 type="button"
                 className="absolute -left-11 top-0 bg-white text-gray-600 rounded-full w-8 h-8 flex items-center justify-center shadow-md hover:bg-gray-200 hover:text-gray-900"
                 onClick={closeModal}
             >
-                <svg
-                    className="w-4 h-4"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 14"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M1 1l6 6m0 0l6 6M7 7l6-6M7 7L1 13"
-                    />
-                </svg>
+                <IoClose />
                 <span className="sr-only">Close modal</span>
             </button>
 
             {/* Profile Section */}
             <div className="text-center space-y-4">
                 <div className="flex items-center space-x-4">
-                    <img
-                        src="/profile.png"
+                    <Image
+                        src={images}
                         alt="Profile"
-                        className="rounded-full h-[71px] w-[71px]"
-                    />
+                        className="rounded-full h-20 w-20 object-cover"
+                    />    
                     <div className="text-left">
                         <h1 className="text-[16px] font-semibold">Aditya Kumar Kanaujiya</h1>
                         <span className="text-[12px] text-gray-500">
@@ -85,7 +76,8 @@ function OtherModal({ isModalOpen, closeModal }) {
                 {/* Settings and Management Section */}
                 <div className="space-y-4 text-left">
                     <div className="space-y-2">
-                        <p className="text-[11px]">Setting and Privacy</p>
+                        <p onClick={() => router.push('../Premiun')} className="text-[11px] cursor-pointer">Premium</p>
+                        <p className="text-[11px]">Setting</p>
                         <p className="text-[11px]">Help</p>
                         <p className="text-[11px]">Language</p>
                     </div>
@@ -99,8 +91,6 @@ function OtherModal({ isModalOpen, closeModal }) {
                     </div>
                     <hr />
                 </div>
-
-                {/* Sign Out Button */}
                 <div className="flex justify-center mt-4">
                     <button
                         onClick={() => {
